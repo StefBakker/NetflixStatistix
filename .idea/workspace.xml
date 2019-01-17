@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aab0ef55-6d27-44ce-8733-3c42b726b6dc" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/MainForm$2.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/domain/AccountForm.form" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/domain/AccountForm.java" afterDir="false" />
+=======
+<<<<<<< Updated upstream
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_microsoft_sqlserver_mssql_jdbc_7_0_0_jre10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_microsoft_sqlserver_mssql_jdbc_7_0_0_jre8.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/mssql-jdbc-6.2.2.jre8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/datalayer/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/datalayer/DatabaseConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/util/ConfigReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NetflixStatistix.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NetflixStatistix.iml" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Account.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/DatabaseConnection.class" afterDir="false" />
@@ -13,6 +24,9 @@
       <change beforePath="$PROJECT_DIR$/src/datalayer/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datalayer/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/MainForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MainForm.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/MainForm.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +38,10 @@
     <session id="53114698">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -95,7 +111,58 @@
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< Updated upstream
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+=======
+<<<<<<< Updated upstream
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/datalayer/DatabaseConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#656#657#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/domain/MainForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+                <element signature="e#724#725#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/domain/MainForm.form">
+          <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+    </leaf>
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -144,8 +211,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< Updated upstream
       <pane id="Scope" />
       <pane id="PackagesPane" />
+=======
+<<<<<<< Updated upstream
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,7 +261,16 @@
           <select />
         </subPane>
       </pane>
+<<<<<<< Updated upstream
       <pane id="AndroidView" />
+=======
+      <pane id="Scope" />
+<<<<<<< Updated upstream
+=======
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,20 +331,44 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544013338464</updated>
+<<<<<<< Updated upstream
       <workItem from="1544013339946" duration="26000" />
       <workItem from="1547501635957" duration="8412000" />
       <workItem from="1547557788782" duration="1337000" />
+<<<<<<< Updated upstream
       <workItem from="1547732965683" duration="6598000" />
+=======
+=======
+      <workItem from="1544013339946" duration="659000" />
+      <workItem from="1544516757917" duration="28000" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< Updated upstream
     <option name="totallyTimeSpent" value="16377000" />
+=======
+<<<<<<< Updated upstream
+    <option name="totallyTimeSpent" value="9775000" />
+=======
+    <option name="totallyTimeSpent" value="687000" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
+<<<<<<< Updated upstream
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16845638" />
+=======
+<<<<<<< Updated upstream
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17986578" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2536913" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -279,7 +387,10 @@
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="TMC Test Results" order="11" />
+<<<<<<< Updated upstream
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32907802" />
+=======
+>>>>>>> Stashed changes
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -310,8 +421,13 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
+<<<<<<< Updated upstream
           <first_editor>
             <caret column="17" selection-start-column="17" selection-end-column="17" />
+=======
+          <first_editor relative-caret-position="34">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+>>>>>>> Stashed changes
           </first_editor>
           <second_editor />
         </state>
