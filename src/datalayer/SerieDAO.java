@@ -1,10 +1,12 @@
 package datalayer;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import Domain.Account;
+import Domain.Serie;
 
-public class Serie {
+import java.sql.*;
+import java.util.ArrayList;
+
+public class SerieDAO {
     private int seriesID;
     private int minAge;
     private String title;
@@ -37,35 +39,36 @@ public class Serie {
         return amountOfEpisodes;
     }
 
-    public Serie(){
+    private DatabaseConnection conn;
+
+    public SerieDAO() {
+        // The connection string to the database
         conn = new DatabaseConnection();
     }
-    public void series(int seriesID) {
 
-        // Setup the connection
-        Connection conn = DatabaseConnection.getInstance().connect();
+    public ArrayList<SerieDAO> series(int seriesID) {
 
-        // Surround with try/catch to handle any exceptions
+        ArrayList<SerieDAO> serieDAOS = new ArrayList<>();
+
+        String query = "SELECT * FROM Serie";
+        ResultSet resultSet = conn.executeSelectQuery(query);
         try {
-            // Defining you want to create a statement
-            Statement st = conn.createStatement();
-            //ArrayList<String[]> serieGegevens = con.getDataReturnArrayList("SELECT Title, SerieID, Genre, SpokenLanguage, MinAge FROM Serie WHERE SerieID = '" + serieID + "';");
-            // The SQL that needs to be executed
-            // Someway to import series data from the database
-            // Execute the Query
-        } catch (SQLException e) {
-
-            // This error will be shown when something goes wrong with creating an account
-            System.out.println("Error getting Series");
-        } finally {
-            try {
-                // And finally close the connection with the database
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            while (resultSet.next()) {
+                Serie serie = new Serie(
+                        resultSet.getString("Title"),
+                        resultSet.getString("Genre"),
+                        resultSet.getString("Language"),
+                        resultSet.getString("AgeIndication")
+                );
             }
+
+            conn.closeConnection();
+
+            return serieDAOS;
+        } catch (SQLException e) {
+            System.out.println(e);
         }
+        return null;
     }
 }
-
 

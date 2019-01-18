@@ -1,7 +1,7 @@
 package datalayer;
 
 
-public class Episode extends SerieDAO {
+public class EpisodeDAO extends SerieDAO {
     private int length;
     private String name;
     private int amountOfViews;
