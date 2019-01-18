@@ -37,6 +37,9 @@ public class Serie {
         return amountOfEpisodes;
     }
 
+    public Serie(){
+        conn = new DatabaseConnection();
+    }
     public void series(int seriesID) {
 
         // Setup the connection

@@ -2,50 +2,87 @@ package datalayer;
 
 import util.ConfigReader;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseConnection {
 
-    /**
-     * The connection url used to connect to the database
-     */
-    private String connectionUrl;
+    private Connection connection;
+    private Statement statement;
+    private String connectionConfig;
 
-    /**
-     * singleton pattern.
-     */
-    private static DatabaseConnection instance;
+    public DatabaseConnection() {
+        connection = null;
+        statement = null;
 
-    /**
-     * constructor
-     * uses ConfigReader#getConnectionURL() to set the connectionUrl
-     */
-    private DatabaseConnection() {
-        connectionUrl = ConfigReader.getInstance().getConnectionURL();
+        connectionConfig = ConfigReader.getInstance().getConnectionURL();
     }
 
-    /**
-     * Gets a connection to the database using the connectionUrl.
-     * @return the connection to the database
-     */
-    public Connection connect() {
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(connectionUrl);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    public boolean openConnection() {
+        boolean result = false;
 
-        return conn;
+        if (connection == null) {
+            try {
+                connection = DriverManager.getConnection(connectionConfig);
+
+                if (connection != null) {
+                    statement = connection.createStatement();
+                }
+
+                result = true;
+            } catch (SQLException e) {
+                System.out.println(e);
+                result = false;
+            }
+        } else {
+            result = true;
+        }
+        return result;
     }
 
-    public static DatabaseConnection getInstance() {
-        if(instance == null) {
-            instance = new DatabaseConnection();
-        }
+    public boolean isConnected(){
+        boolean connected = false;
 
-        return instance;
+        if(connection != null && statement != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public void closeConnection() {
+        try{
+            statement.close();
+
+            connection.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public ResultSet executeSelectQuery(String query) {
+        ResultSet result = null;
+        if (query != null) {
+            try {
+                statement.executeQuery(query);
+            } catch (SQLException e) {
+                System.out.println(e);
+                result = null;
+            }
+        }
+        return result;
+    }
+
+    public boolean executeInsertQuery(String query) {
+        boolean result = false;
+        if(query != null){
+            try{
+                statement.executeUpdate(query);
+                result = true;
+            } catch (SQLException e) {
+                System.out.println(e);
+                result = false;
+            }
+        }
+        return result;
     }
 }

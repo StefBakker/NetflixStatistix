@@ -1,11 +1,12 @@
-package domain;
+package UI;
 
-import datalayer.Account;
+import datalayer.AccountDAO;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 public class AccountForm extends JFrame{
 
@@ -48,11 +49,16 @@ public class AccountForm extends JFrame{
                 houseNumberAddition = HouseNumberAdditionTextField.getText();
                 residence = ResidenceTextField.getText();
 
-                // Create new account with given values
-                new Account().createAccount(name, street, houseNumber, houseNumberAddition, residence);
+                boolean succesfull = new AccountDAO().createAccount(name, street, houseNumber, houseNumberAddition, residence);
+                if(succesfull){
+                    JOptionPane.showMessageDialog(null,"Succesfully created account!");
 
-                // Disposes the window
-                dispose();
+                    // Disposes the window if succesfull
+                    dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null,"Failed creating account, please check if all values are filled in correctly");
+                }
+
             }
         });
     }
