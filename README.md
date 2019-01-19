@@ -2,5 +2,5 @@ NetflixStatistix Informatie,
 
 Gemaakt door:
 Stef Bakker,
-Alan,
+Alan van Tuijl,
 Marco
