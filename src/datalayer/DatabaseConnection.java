@@ -8,6 +8,7 @@ public class DatabaseConnection {
 
     private Connection connection;
     private Statement statement;
+
     private String connectionConfig;
 
     public DatabaseConnection() {
@@ -39,43 +40,46 @@ public class DatabaseConnection {
         return result;
     }
 
-    public boolean isConnected(){
+    public boolean isConnected() {
         boolean connected = false;
 
-        if(connection != null && statement != null){
+        if (connection != null && statement != null) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public void closeConnection() {
-        try{
+        try {
             statement.close();
 
             connection.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
     public ResultSet executeSelectQuery(String query) {
         ResultSet result = null;
+
         if (query != null) {
             try {
-                statement.executeQuery(query);
-            } catch (SQLException e) {
+                result = statement.executeQuery(query);
+            } catch (Exception e) {
                 System.out.println(e);
                 result = null;
             }
         }
+
         return result;
     }
 
     public boolean executeInsertQuery(String query) {
         boolean result = false;
-        if(query != null){
-            try{
+
+        if (query != null) {
+            try {
                 statement.executeUpdate(query);
                 result = true;
             } catch (SQLException e) {

@@ -2,13 +2,19 @@ package datalayer;
 
 import Domain.Account;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class AccountDAO {
 
     private DatabaseConnection conn;
+
+    private Statement statement;
 
     public AccountDAO() {
         // Initiate the connection to the database
@@ -34,31 +40,38 @@ public class AccountDAO {
         }
         return false;
     }
+     // Function to get all accounts
+    public Set<Account> getAllAccounts() {
 
-    // Function to get all accounts
-    public ArrayList<AccountDAO> getAllAccounts() {
+        ResultSet resultSet = null;
+        Set<Account> accountDAOS = new HashSet<>();
 
-        ArrayList<AccountDAO> accountDAOS = new ArrayList<>();
+        String query = "SELECT * FROM dbo.Account";
+        resultSet = conn.executeSelectQuery(query);
 
-        String query = "SELECT * FROM Account";
-        ResultSet resultSet = conn.executeSelectQuery(query);
-        try {
-            while (resultSet.next()) {
-                Account account = new Account(
-                        resultSet.getString("Name"),
-                        resultSet.getString("Street"),
-                        resultSet.getString("HouseNumber"),
-                        resultSet.getString("HouseNumberAddition"),
-                        resultSet.getString("Residence")
-                );
+        if(resultSet != null){
+            try {
+                while (resultSet.next()) {
+                    Account account = new Account(
+                            resultSet.getString("Name"),
+                            resultSet.getString("Street"),
+                            resultSet.getString("HouseNumber"),
+                            resultSet.getString("HouseNumberAddition"),
+                            resultSet.getString("Residence")
+                    );
+                }
+
+                conn.closeConnection();
+
+                return accountDAOS;
+            } catch (SQLException e) {
+                System.out.println(e);
             }
-
-            conn.closeConnection();
-
-            return accountDAOS;
-        } catch (SQLException e) {
-            System.out.println(e);
         }
+
+        //resultSet = conn.executeSelectQuery(query);
+
+
         return null;
     }
 }
