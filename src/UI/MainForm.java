@@ -42,12 +42,12 @@ public class MainForm extends JFrame {
         testConnectionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new DatabaseConnection().openConnection();
-//                if(connectionSuccesfull){
-//                    testConnectionLabel.setText("Connected!");
-//                }else{
-//                    testConnectionLabel.setText("Failed..");
-//                }
+                Boolean connectionSuccesfull = new DatabaseConnection().openConnection();
+                if (connectionSuccesfull) {
+                    testConnectionLabel.setText("Connected!");
+                } else {
+                    testConnectionLabel.setText("Failed..");
+                }
             }
         });
         addAccountButton.addActionListener(new ActionListener() {
@@ -68,11 +68,11 @@ public class MainForm extends JFrame {
         columns.add("Language");
         columns.add("Age Indication");
 
-        if(movies != null){
-            TableModel tableModel = new DefaultTableModel(movies.toArray(new Object[][] {}), columns.toArray());
+        if (movies != null) {
+            TableModel tableModel = new DefaultTableModel(movies.toArray(new Object[][]{}), columns.toArray());
             JTable table = moviesTable;
             table.setModel(tableModel);
-        }else{
+        } else {
             System.out.println("No movies found ?");
         }
 
@@ -82,7 +82,7 @@ public class MainForm extends JFrame {
         Set<Account> accounts = new AccountDAO().getAllAccounts();
 
         ArrayList<String> columns = new ArrayList<String>();
-       // ArrayList<String[]> values = new ArrayList<String[]>();
+        // ArrayList<String[]> values = new ArrayList<String[]>();
 
         columns.add("Name");
         columns.add("Street");
@@ -92,11 +92,11 @@ public class MainForm extends JFrame {
 //            values.add(new String[] {"val"+i+" Name","val"+i+" Street","val"+i+" Profiles"});
 //        }
 
-        if(accounts != null){
-            TableModel tableModel = new DefaultTableModel(accounts.toArray(new Object[][] {}), columns.toArray());
+        if (accounts != null) {
+            TableModel tableModel = new DefaultTableModel(accounts.toArray(new Object[][]{}), columns.toArray());
             JTable table = accountsTable;
             table.setModel(tableModel);
-        }else{
+        } else {
             System.out.println("No accounts found?");
         }
     }

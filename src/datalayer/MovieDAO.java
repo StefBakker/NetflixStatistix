@@ -1,71 +1,70 @@
 package datalayer;
 
 
+import Domain.Movie;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class Movie {
-    private int filmID;
-    private int length;
-    private String title;
-    private int watchedProgress;
-    private int minAge;
-    private String genre;
-    private String language;
+public class MovieDAO {
 
     private DatabaseConnection conn;
 
-    public Movie(String title, String genre, String language){
+    public MovieDAO() {
+
         // The connection string to the database
         conn = new DatabaseConnection();
     }
 
-    public ArrayList<Movie> movies(int filmID) {
+    public ArrayList<MovieDAO> movies(int filmID) {
 
-        ArrayList<Movie> movies = new ArrayList<>();
+        ArrayList<MovieDAO> movieDAOS = new ArrayList<>();
 
         String query = "SELECT * FROM Film";
         ResultSet resultSet = conn.executeSelectQuery(query);
         try {
             while (resultSet.next()) {
-                Movie movie = new Movie(
-                        resultSet.getString("Title"),
+                Movie movieDAO = new Movie(
+                        resultSet.getString("ProgramTitle"),
                         resultSet.getString("Genre"),
-                        resultSet.getString("Language")
+                        resultSet.getString("Language"),
+                        resultSet.getString("AgeIndication")
                 );
             }
 
             conn.closeConnection();
 
-            return movies;
+            return movieDAOS;
         } catch (SQLException e) {
             System.out.println(e);
         }
         return null;
     }
 
-    public ArrayList<Movie> getAllMovies(){
+    public ArrayList<MovieDAO> getAllMovies() {
         ArrayList<Movie> moviesList = new ArrayList<>();
 
-        if(conn.openConnection()){
-            String query = "SELECT * FROM Movie";
+        if (conn.openConnection()) {
+            String query = "SELECT * FROM dbo.Movie";
 
             ResultSet resultSet = conn.executeSelectQuery(query);
 
-            try{
-                while (resultSet.next()){
-                    Movie movie = new Movie(
-                            resultSet.getString("Name"),
+            try {
+                while (resultSet.next()) {
+                    Movie movies = new Movie(
+                            resultSet.getString("ProgramTitle"),
                             resultSet.getString("Genre"),
+                            resultSet.getString("Language"),
                             resultSet.getString("AgeIndication")
                     );
-                    moviesList.add(movie);
+                    moviesList.add(movies);
                 }
                 conn.closeConnection();
 
             } catch (SQLException e) {
-                System.out.println(e);            }
+                System.out.println(e);
+            }
         }
         return null;
     }
