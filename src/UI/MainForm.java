@@ -1,7 +1,6 @@
 package UI;
 
 import Domain.Account;
-import Domain.Movie;
 import datalayer.AccountDAO;
 import datalayer.DatabaseConnection;
 import datalayer.MovieDAO;
@@ -24,10 +23,13 @@ public class MainForm extends JFrame {
     private JLabel testConnectionLabel;
     private JTable accountsTable;
     private JTable moviesTable;
+    private JLabel JLabelProgram;
+    private JLabel JLabelInfo;
 
     public MainForm() {
         add(JPanel);
         add(tabbedPanel);
+
 
         setTitle("Netflix Statistix");
         setSize(700, 400);
@@ -89,7 +91,7 @@ public class MainForm extends JFrame {
         columns.add("Profiles");
 
 //        for (int i = 0; i < 10; i++) {
-//            values.add(new String[] {"val"+i+" Name","val"+i+" Street","val"+i+" Profiles"});
+//            accounts.add(new String[] {"val"+i+" Name","val"+i+" Street","val"+i+" Profiles"});
 //        }
 
         if (accounts != null) {
