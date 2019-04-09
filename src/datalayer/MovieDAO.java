@@ -12,7 +12,6 @@ public class MovieDAO {
     private DatabaseConnection conn;
 
     public MovieDAO() {
-
         // The connection string to the database
         conn = new DatabaseConnection();
     }
@@ -21,11 +20,11 @@ public class MovieDAO {
 
         ArrayList<MovieDAO> movieDAOS = new ArrayList<>();
 
-        String query = "SELECT * FROM Film";
+        String query = "SELECT * FROM Movie";
         ResultSet resultSet = conn.executeSelectQuery(query);
         try {
             while (resultSet.next()) {
-                Movie movieDAO = new Movie(
+                Movie movie = new Movie(
                         resultSet.getString("ProgramTitle"),
                         resultSet.getString("Genre"),
                         resultSet.getString("Language"),

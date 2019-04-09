@@ -2,13 +2,10 @@ package datalayer;
 
 import Domain.Account;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class AccountDAO {
 
@@ -35,43 +32,38 @@ public class AccountDAO {
             } else {
                 return false;
             }
-        }else{
+        } else {
             System.out.println("No database connection!");
         }
         return false;
     }
-     // Function to get all accounts
-    public Set<Account> getAllAccounts() {
 
-        ResultSet resultSet = null;
-        Set<Account> accountDAOS = new HashSet<>();
+    // Function to get all accounts
+    public ArrayList<Account> getAllAccounts() {
+        ArrayList<Account> accountsList = new ArrayList<>();
 
-        String query = "SELECT * FROM dbo.Account";
-        resultSet = conn.executeSelectQuery(query);
+        if (conn.openConnection()) {
+            String query = "SELECT * FROM dbo.Account";
 
-        if(resultSet != null){
+            ResultSet resultSet = conn.executeSelectQuery(query);
+
             try {
                 while (resultSet.next()) {
-                    Account account = new Account(
+                    Account accounts = new Account(
                             resultSet.getString("Name"),
                             resultSet.getString("Street"),
                             resultSet.getString("HouseNumber"),
                             resultSet.getString("HouseNumberAddition"),
                             resultSet.getString("Residence")
                     );
+                    accountsList.add(accounts);
                 }
-
                 conn.closeConnection();
 
-                return accountDAOS;
             } catch (SQLException e) {
                 System.out.println(e);
             }
         }
-
-        //resultSet = conn.executeSelectQuery(query);
-
-
         return null;
     }
 }

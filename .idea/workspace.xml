@@ -3,19 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="4102fcdf-e24c-41a9-98a4-52b30f709001" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Manual.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Manual.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/DatabaseConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/DatabaseConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Episode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Film.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Serie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/AccountForm$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/AccountForm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/MainForm$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/MainForm$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/MainForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/UI/AccountForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/UI/AccountForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/UI/MainForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/UI/MainForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/AccountDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/AccountDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/MovieDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/MovieDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/ProfileDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/datalayer/ProfileDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/NetflixStatistix/domain/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datalayer/AccountDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datalayer/AccountDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datalayer/MovieDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datalayer/MovieDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datalayer/Profile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datalayer/ProfileDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datalayer/ProfileDAO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,54 +34,65 @@
   <component name="CoverageViewManager">
     <option name="myElementSize" value="209" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1339911059">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="6" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="35" />
-          <entry key="java" value="5634" />
-          <entry key="properties" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="5634" />
-          <entry key="PLAIN_TEXT" value="35" />
-          <entry key="Properties" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="12" />
-          <entry key="form" value="10" />
-          <entry key="java" value="65" />
-          <entry key="properties" value="2" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="12" />
-          <entry key="GUI_DESIGNER_FORM" value="10" />
-          <entry key="JAVA" value="65" />
-          <entry key="Properties" value="2" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf />
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Domain/Account.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="255">
+                  <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/datalayer/AccountDAO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/util/ConfigReader.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/UI/MainForm.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="385">
+                  <caret line="83" selection-start-line="83" selection-end-line="83" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/datalayer/DatabaseConnection.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="119">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,6 +100,16 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>no acco</find>
+      <find>DatabaseConnection</find>
+      <find>connection</find>
+      <find>MovieDAO</find>
+      <find>to</find>
+      <find>\</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -100,36 +125,35 @@
         <option value="$PROJECT_DIR$/src/UI/AccountForm.java" />
         <option value="$PROJECT_DIR$/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/datalayer/SerieDAO.java" />
-        <option value="$PROJECT_DIR$/src/datalayer/AccountDAO.java" />
-        <option value="$PROJECT_DIR$/src/Domain/Profile.java" />
         <option value="$PROJECT_DIR$/src/Domain/FIlm.java" />
         <option value="$PROJECT_DIR$/src/Domain/Film.java" />
         <option value="$PROJECT_DIR$/src/datalayer/Film.java" />
-        <option value="$PROJECT_DIR$/src/datalayer/DatabaseConnection.java" />
         <option value="$PROJECT_DIR$/src/datalayer/Movie.java" />
         <option value="$PROJECT_DIR$/src/datalayer/DAO.java" />
-        <option value="$PROJECT_DIR$/src/datalayer/MovieDAO.java" />
-        <option value="$PROJECT_DIR$/src/UI/MainForm.java" />
         <option value="$PROJECT_DIR$/src/UI/MainForm.form" />
+        <option value="$PROJECT_DIR$/src/datalayer/MovieDAO.java" />
+        <option value="$PROJECT_DIR$/src/Domain/Profile.java" />
+        <option value="$PROJECT_DIR$/src/datalayer/Profile.java" />
+        <option value="$PROJECT_DIR$/src/datalayer/ProfileDAO.java" />
+        <option value="$PROJECT_DIR$/src/UI/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/util/ConfigReader.java" />
+        <option value="$PROJECT_DIR$/src/datalayer/DatabaseConnection.java" />
+        <option value="$PROJECT_DIR$/src/datalayer/AccountDAO.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="377" />
+    <option name="y" value="-8" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -165,20 +189,25 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="NetflixStatistix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NetflixStatistix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548022501813" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Programmeren 1/programmeren1-tentamen-1819-kans2-master" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554808429006" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -222,16 +251,19 @@
       <workItem from="1548022836260" duration="72000" />
       <workItem from="1548022927873" duration="65000" />
       <workItem from="1548145365614" duration="524000" />
+      <workItem from="1554756863989" duration="749000" />
+      <workItem from="1554805707790" duration="2675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23443000" />
+    <option name="totallyTimeSpent" value="26867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21409395" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -240,8 +272,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -249,7 +281,8 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32827735" />
+      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -260,43 +293,29 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3295302" />
+      <window_info anchor="right" id="Maven" order="10" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32907802" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/UI/MainForm.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/datalayer/DatabaseConnection.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
@@ -306,69 +325,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSPacket.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/SQLServerStatement.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="130" column="159" selection-start-line="130" selection-start-column="159" selection-end-line="130" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSCommand.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="79" column="139" selection-start-line="79" selection-start-column="139" selection-end-line="79" selection-end-column="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/ActivityCorrelator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/ActivityId.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSChannel.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/SQLServerConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="343" column="45" selection-start-line="343" selection-start-column="45" selection-end-line="343" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSWriter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="89" column="114" selection-start-line="89" selection-start-column="114" selection-end-line="89" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSPacket.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSReader.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/SQLServerStatement.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSCommand.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/ActivityCorrelator.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/ActivityId.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSChannel.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/SQLServerConnection.class" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/TDSWriter.class" />
     <entry file="file://$PROJECT_DIR$/src/datalayer/Database.java" />
     <entry file="file://$PROJECT_DIR$/src/datalayer/EpisodeDAO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -377,20 +342,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/AccountForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/AccountForm.form" />
     <entry file="file://$PROJECT_DIR$/src/UI/AccountForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datalayer/ProfileDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -408,20 +364,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datalayer/SerieDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="53" column="61" selection-start-line="53" selection-start-column="61" selection-end-line="53" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/SQLServerDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/microsoft/sqlserver/mssql-jdbc/7.0.0.jre10/mssql-jdbc-7.0.0.jre10.jar!/com/microsoft/sqlserver/jdbc/SQLServerDriver.class" />
     <entry file="jrt://C:/Program Files/Java/jdk-11.0.2!/java.base/jdk/internal/reflect/NativeConstructorAccessorImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -450,20 +393,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/ConfigReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/datalayer/AccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Serie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -471,65 +400,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/datalayer/DAO.java" />
+    <entry file="file://$PROJECT_DIR$/src/UI/MainForm.form" />
+    <entry file="file://$PROJECT_DIR$/Read me!.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/Profile.java">
+    <entry file="file://$PROJECT_DIR$/resources/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="170">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Domain/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="187">
           <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/datalayer/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datalayer/DAO.java" />
-    <entry file="file://$PROJECT_DIR$/resources/config.properties">
+    <entry file="file://$PROJECT_DIR$/src/Domain/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="255">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding>
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#375#376#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/datalayer/DatabaseConnection.java">
+    <entry file="file://$PROJECT_DIR$/src/Domain/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="255">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datalayer/ProfileDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/datalayer/MovieDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        <state relative-caret-position="217">
+          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        <state relative-caret-position="385">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/MainForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
+    <entry file="file://$PROJECT_DIR$/src/datalayer/SerieDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datalayer/DatabaseConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/ConfigReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/datalayer/AccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

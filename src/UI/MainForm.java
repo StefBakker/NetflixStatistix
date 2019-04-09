@@ -81,7 +81,7 @@ public class MainForm extends JFrame {
     }
 
     public void fillAccountsTable() {
-        Set<Account> accounts = new AccountDAO().getAllAccounts();
+        ArrayList<Account> accounts = new AccountDAO().getAllAccounts();
 
         ArrayList<String> columns = new ArrayList<String>();
         // ArrayList<String[]> values = new ArrayList<String[]>();
@@ -99,7 +99,7 @@ public class MainForm extends JFrame {
             JTable table = accountsTable;
             table.setModel(tableModel);
         } else {
-            System.out.println("No accounts found?");
+            System.out.println("No accounts found ?");
         }
     }
 
