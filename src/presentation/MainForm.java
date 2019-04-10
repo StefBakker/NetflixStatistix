@@ -30,10 +30,6 @@ public class MainForm extends JFrame {
         add(JPanel);
         add(tabbedPanel);
 
-
-        setTitle("Netflix Statistix");
-        setSize(700, 400);
-
         // Fill tables
         fillAccountsTable();
         fillMoviesTable();
