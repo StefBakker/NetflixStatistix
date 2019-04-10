@@ -7,26 +7,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProfileDAO {
-    private DatabaseConnection conn;
 
-    public ProfileDAO(DatabaseConnection conn) {
-        conn = new DatabaseConnection();
+    public ProfileDAO() {
     }
 
-    public ArrayList<ProfileDAO> profiles() {
-        ArrayList<ProfileDAO> profileDAOS = new ArrayList<>();
-
+    public ArrayList<Profile> getAllProfiles(){
+        ArrayList<Profile> profilesList = new ArrayList<>();
         String query = "SELECT * FROM Profile";
-        ResultSet resultSet = conn.executeSelectQuery(query);
-        try {
-            while (resultSet.next()) {
-                Profile profile = new Profile(
+        ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
+        try{
+            while (resultSet.next()){
+                Profile profiles = new Profile(
                         resultSet.getString("Name"),
                         resultSet.getString("DateOfBirth")
                 );
+                profilesList.add(profiles);
             }
-            conn.closeConnection();
-            return profileDAOS;
+            return profilesList;
         } catch (SQLException e) {
             System.out.println(e);
         }

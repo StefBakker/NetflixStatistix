@@ -6,87 +6,72 @@ import java.sql.*;
 
 public class DatabaseConnection {
 
-    private Connection connection;
-    private Statement statement;
-
-    private String connectionConfig;
+    private Connection conn;
+    private String DatabaseConnectionURL;
 
     public DatabaseConnection() {
-        connection = null;
-        statement = null;
 
-        connectionConfig = ConfigReader.getInstance().getConnectionURL();
-    }
-
-    public boolean openConnection() {
-        boolean result = false;
-
-        if (connection == null) {
-            try {
-                connection = DriverManager.getConnection(connectionConfig);
-
-                if (connection != null) {
-                    statement = connection.createStatement();
-                }
-
-                result = true;
-            } catch (SQLException e) {
-                System.out.println(e);
-                result = false;
-            }
-        } else {
-            result = true;
-        }
-        return result;
-    }
-
-    public boolean isConnected() {
-        boolean connected = false;
-
-        if (connection != null && statement != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void closeConnection() {
+        // Initiate the connection to the database
+        DatabaseConnectionURL = new ConfigReader().getConnectionURL();
         try {
-            statement.close();
-
-            connection.close();
-        } catch (Exception e) {
-            System.out.println(e);
+            conn = DriverManager.getConnection(DatabaseConnectionURL);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 
-    public ResultSet executeSelectQuery(String query) {
-        ResultSet result = null;
+    public boolean setDataToTable(String query) {
+        try {
+            if (conn.isValid(3)) {
+                Statement stmt;
 
-        if (query != null) {
-            try {
-                result = statement.executeQuery(query);
-            } catch (Exception e) {
-                System.out.println(e);
-                result = null;
+                stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(query);
+
+                stmt.close();
+                conn.close();
+                return rs != null;
+            } else {
+                System.out.println("No database connection!");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        return false;
 
-        return result;
     }
 
-    public boolean executeInsertQuery(String query) {
-        boolean result = false;
+    public ResultSet getAllFromTable(String query) {
+        ResultSet resultSet = null;
 
-        if (query != null) {
-            try {
-                statement.executeUpdate(query);
-                result = true;
-            } catch (SQLException e) {
-                System.out.println(e);
-                result = false;
+        try {
+            if (conn.isValid(3)) {
+                Statement stmt = null;
+                try {
+                    stmt = conn.createStatement();
+                } catch (SQLException e) {
+                    System.out.println(e);
+                }
+                try {
+                    resultSet = stmt.executeQuery(query);
+                } catch (SQLException e) {
+                    System.out.println(e);
+                }
             }
+            return resultSet;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return result;
+        return null;
+    }
+
+    public Boolean testConnection() {
+        try {
+            return conn.isValid(0);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

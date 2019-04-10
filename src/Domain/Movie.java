@@ -1,6 +1,7 @@
 package Domain;
 
 public class Movie {
+
     private String ProgramTitle;
     private String Genre;
     private String Language;
