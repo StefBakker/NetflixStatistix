@@ -1,7 +1,7 @@
 package datalayer;
 
 
-import Domain.Movie;
+import domain.Movie;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

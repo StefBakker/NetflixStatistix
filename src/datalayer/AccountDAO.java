@@ -1,6 +1,6 @@
 package datalayer;
 
-import Domain.Account;
+import domain.Account;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -41,9 +41,11 @@ public class AccountDAO {
                 );
                 accountsList.add(accounts);
             }
+            return accountsList;
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
-        return accountsList;
+        return null;
     }
 }

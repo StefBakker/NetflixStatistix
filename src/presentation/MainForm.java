@@ -1,8 +1,8 @@
-package UI;
+package presentation;
 
-import Domain.Account;
-import Domain.Movie;
-import Domain.Serie;
+import domain.Account;
+import domain.Movie;
+import domain.Serie;
 import datalayer.AccountDAO;
 import datalayer.DatabaseConnection;
 import datalayer.MovieDAO;

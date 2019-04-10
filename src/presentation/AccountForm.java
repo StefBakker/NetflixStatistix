@@ -1,4 +1,4 @@
-package UI;
+package presentation;
 
 import datalayer.AccountDAO;
 
@@ -6,7 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
 public class AccountForm extends JFrame{
 

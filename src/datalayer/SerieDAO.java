@@ -1,6 +1,6 @@
 package datalayer;
 
-import Domain.Serie;
+import domain.Serie;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

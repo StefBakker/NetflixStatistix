@@ -1,6 +1,6 @@
 package datalayer;
 
-import Domain.Profile;
+import domain.Profile;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -26,11 +26,11 @@ public class DatabaseConnection {
                 Statement stmt;
 
                 stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(query);
+                stmt.executeQuery(query);
 
                 stmt.close();
                 conn.close();
-                return rs != null;
+                return true;
             } else {
                 System.out.println("No database connection!");
             }
@@ -38,7 +38,6 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
         return false;
-
     }
 
     public ResultSet getAllFromTable(String query) {
