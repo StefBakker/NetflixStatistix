@@ -74,23 +74,19 @@ public class DatabaseConnection {
         return false;
     }
 
-    public Boolean checkIfInTable(String query) {
+    public Boolean checkIfUserExists(String userName) {
         try {
-            if (conn.isValid(3)) {
-                Statement stmt;
-
-                stmt = conn.createStatement();
-                ResultSet resultSet = stmt.executeQuery(query);
-                if (resultSet != null){
-                    return true;
-                }
-                stmt.close();
-                conn.close();
-            } else {
-                System.out.println("No database connection!");
+            PreparedStatement st = conn.prepareStatement("select * from Account where firstName = ?");
+            st.setString(1, userName);
+            ResultSet r1 = st.executeQuery();
+            if (r1.next()) {
+                System.out.println("Found!");
+                return true;
+            }else{
+                System.out.println("User doesn't exist");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }catch (SQLException e){
+            System.out.println(e);
         }
         return false;
     }
