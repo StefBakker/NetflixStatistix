@@ -20,10 +20,10 @@ public class RegisterForm extends JFrame {
     public RegisterForm() {
         add(registrateForm);
         setBackground(Color.black);
-        setSize(300, 300);
+        setSize(300, 400);
+        setTitle("Registrate account");
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
         centerFrame();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         createButton.addActionListener(e -> {
             String firstName = firstNameTextField.getText();
