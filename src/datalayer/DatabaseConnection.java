@@ -1,14 +1,17 @@
 package datalayer;
 
+import domain.Profile;
 import util.ConfigReader;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseConnection {
 
     private Connection conn;
     private String DatabaseConnectionURL;
 
+    // Constructor
     public DatabaseConnection() {
 
         // Initiate the connection to the database
@@ -20,18 +23,25 @@ public class DatabaseConnection {
         }
     }
 
+    // Function to set data to a certain table in the databae
     public boolean setDataToTable(String query) {
         try {
+            // Check if the connection is valid with an timeout for 3 seconds
             if (conn.isValid(3)) {
-                Statement stmt;
 
+                // Create statement
+                Statement stmt;
                 stmt = conn.createStatement();
+
+                // Execute the statement with the given query
                 stmt.executeQuery(query);
 
+                // Close connections
                 stmt.close();
                 conn.close();
                 return true;
             } else {
+                // Give error if database isn't connected or found
                 System.out.println("No database connection!");
             }
         } catch (SQLException e) {
@@ -40,7 +50,9 @@ public class DatabaseConnection {
         return false;
     }
 
+    // Function to return all data from a table
     public ResultSet getAllFromTable(String query) {
+
         ResultSet resultSet = null;
 
         try {
@@ -65,29 +77,53 @@ public class DatabaseConnection {
         return null;
     }
 
+    // Function to check the database connection
     public Boolean testConnection() {
+
         try {
-            return conn.isValid(0);
+            return conn.isValid(5);
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return false;
     }
 
+    // Function to check if an user exists in the database and returns a boolean
     public Boolean checkIfUserExists(String userName) {
         try {
-            PreparedStatement st = conn.prepareStatement("select * from Account where firstName = ?");
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM Account WHERE firstName = ?");
             st.setString(1, userName);
             ResultSet r1 = st.executeQuery();
             if (r1.next()) {
                 System.out.println("Found!");
                 return true;
-            }else{
+            } else {
                 System.out.println("User doesn't exist");
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return false;
+    }
+
+    // Function to retrieve all profiles from the give accountID
+    public ArrayList getAllProfiles(int accountID) {
+        ArrayList<Profile> profilesList = new ArrayList<>();
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM Profile WHERE AccountID = ?");
+            st.setInt(1, accountID);
+            ResultSet resultSet = st.executeQuery();
+            while (resultSet.next()) {
+                Profile profiles = new Profile(
+                        resultSet.getString("firstName"),
+                        resultSet.getString("DateOfBirth")
+                );
+                profilesList.add(profiles);
+            }
+            return profilesList;
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return profilesList;
     }
 }

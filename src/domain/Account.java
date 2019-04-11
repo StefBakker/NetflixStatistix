@@ -2,6 +2,7 @@ package domain;
 
 public class Account {
 
+    private int id;
     private String firstName;
     private String lastName;
     private String street;
@@ -9,13 +10,18 @@ public class Account {
     private String houseNumberAddition;
     private String residence;
 
-    public Account(String firstName, String lastName, String street, String houseNumber, String houseNumberAddition, String residence) {
+    public Account(int ID, String firstName, String lastName, String street, String houseNumber, String houseNumberAddition, String residence) {
+        this.id = ID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
         this.houseNumber = houseNumber;
         this.houseNumberAddition = houseNumberAddition;
         this.residence = residence;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getFirstName(){

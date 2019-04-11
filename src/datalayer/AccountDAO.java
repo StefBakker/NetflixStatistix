@@ -15,7 +15,11 @@ public class AccountDAO {
 
     //Function to create a account
     public boolean createAccount(String name, String lastname, String street, String houseNumber, String houseNumberAddition, String residence) {
+
+        // Create a query string with the information needed for creating an account
         String query = "INSERT INTO Account(firstName, lastName, Street, HouseNumber, HouseNumberAddition, Residence) VALUES ('" + name + "','" + lastname + "','" + street + "''" + houseNumber + "','" + houseNumberAddition + "','" + residence + "')";
+
+        // Create boolean to check if account is created
         Boolean successfull = new DatabaseConnection().setDataToTable(query);
         if (successfull) {
             System.out.println("Succesfully created account!");
@@ -33,6 +37,7 @@ public class AccountDAO {
         try {
             while (resultSet.next()) {
                 Account accounts = new Account(
+                        resultSet.getInt("ID"),
                         resultSet.getString("firstName"),
                         resultSet.getString("lastName"),
                         resultSet.getString("Street"),
@@ -49,4 +54,5 @@ public class AccountDAO {
         }
         return null;
     }
+
 }

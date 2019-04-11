@@ -12,30 +12,40 @@ public class LoginForm extends JFrame {
     private JTextField userNameField;
     private JButton loginButton;
     private JButton registerButton;
-    private JOptionPane jOptionPane;
 
     public LoginForm() {
+
+        // Add compontents
         add(mainPanel);
 
+        // Set windows attributes
         setBackground(Color.black);
         setTitle("Netflix Statistix");
         setSize(700,300);
         setResizable(false);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
         centerFrame();
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Register button actionlistener
         registerButton.addActionListener(e -> {
             RegisterForm registerForm = new RegisterForm();
             registerForm.setVisible(true);
         });
+
+        // Login button actionlistener
         loginButton.addActionListener(e -> {
             if(!userNameField.getText().isEmpty()){
                 Boolean userFound = new DatabaseConnection().checkIfUserExists(userNameField.getText());
                 if (userFound){
                     dispose();
-                    MainForm mainForm = new MainForm();
-                    mainForm.setVisible(true);
+
+                   // TODO add userID getter so that every account gets its own profiles, it is now set to an already existing account in the database
+
+                    // Aka where now stands "1011" there has to go the userID.
+                    int userID = 1011;
+                    ProfileForm profileForm = new ProfileForm(userID);
+                    profileForm.setVisible(true);
                 }else{
                     System.out.println("User not found");
                     JOptionPane.showMessageDialog(null, "Username not found!");
@@ -47,8 +57,8 @@ public class LoginForm extends JFrame {
         });
     }
 
+    // Method to center the form
     private void centerFrame() {
-
         Dimension windowSize = getSize();
         GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
         Point centerPoint = ge.getCenterPoint();
