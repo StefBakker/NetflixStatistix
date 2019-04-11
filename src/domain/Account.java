@@ -2,22 +2,28 @@ package domain;
 
 public class Account {
 
-    private String name;
+    private String firstName;
+    private String lastName;
     private String street;
     private String houseNumber;
     private String houseNumberAddition;
     private String residence;
 
-    public Account(String name, String street, String houseNumber, String houseNumberAddition, String residence) {
-        this.name = name;
+    public Account(String firstName, String lastName, String street, String houseNumber, String houseNumberAddition, String residence) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.street = street;
         this.houseNumber = houseNumber;
         this.houseNumberAddition = houseNumberAddition;
         this.residence = residence;
     }
 
-    public String getName(){
-        return name;
+    public String getFirstName(){
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getStreet(){

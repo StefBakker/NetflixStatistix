@@ -73,4 +73,25 @@ public class DatabaseConnection {
         }
         return false;
     }
+
+    public Boolean checkIfInTable(String query) {
+        try {
+            if (conn.isValid(3)) {
+                Statement stmt;
+
+                stmt = conn.createStatement();
+                ResultSet resultSet = stmt.executeQuery(query);
+                if (resultSet != null){
+                    return true;
+                }
+                stmt.close();
+                conn.close();
+            } else {
+                System.out.println("No database connection!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

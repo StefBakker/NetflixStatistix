@@ -34,6 +34,7 @@ public class MainForm extends JFrame {
         fillAccountsTable();
         fillMoviesTable();
         fillSeriesTable();
+        setSize(700,300);
 
         // When form opens center it in the middle of the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
@@ -97,7 +98,7 @@ public class MainForm extends JFrame {
         accountsTable.setModel(tableModel);
 
         for (Account account : accounts) {
-            String name = account.getName();
+            String name = account.getFirstName();
             String street = account.getStreet();
 
             Object[] accountData = {name, street};

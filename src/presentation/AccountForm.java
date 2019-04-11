@@ -9,19 +9,21 @@ import java.awt.event.ActionListener;
 
 public class AccountForm extends JFrame{
 
-    private String name;
+    private String firstName;
+    private String lastName;
     private String street;
     private String houseNumber;
     private String houseNumberAddition;
     private String residence;
 
     private javax.swing.JPanel JPanel;
-    private JTextField NameTextField;
+    private JTextField firstNameTextField;
     private JTextField StreetTextField;
     private JTextField HouseNumberTextField;
     private JTextField HouseNumberAdditionTextField;
     private JTextField ResidenceTextField;
     private JButton createNewAccountButton;
+    private JTextField lastNameTextField;
 
     public AccountForm() {
 
@@ -42,13 +44,14 @@ public class AccountForm extends JFrame{
             public void actionPerformed(ActionEvent e) {
 
                 // Get the text from the textfield and assign it to the right value
-                name = NameTextField.getText();
+                firstName = firstNameTextField.getText();
+                lastName = lastNameTextField.getText();
                 street = StreetTextField.getText();
                 houseNumber = HouseNumberTextField.getText();
                 houseNumberAddition = HouseNumberAdditionTextField.getText();
                 residence = ResidenceTextField.getText();
 
-                boolean succesfull = new AccountDAO().createAccount(name, street, houseNumber, houseNumberAddition, residence);
+                boolean succesfull = new AccountDAO().createAccount(firstName, lastName, street, houseNumber, houseNumberAddition, residence);
                 if(succesfull){
                     JOptionPane.showMessageDialog(null,"Succesfully created account!");
 

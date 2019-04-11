@@ -1,16 +1,13 @@
 package presentation;
 
 import datalayer.AccountDAO;
-import datalayer.DatabaseConnection;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class RegisterForm extends JFrame {
 
-    private JTextField nameTextField;
+    private JTextField firstNameTextField;
     private JPanel registrateForm;
     private JTextField StreetTextField;
     private JTextField HouseNumberTextField;
@@ -18,6 +15,7 @@ public class RegisterForm extends JFrame {
     private JTextField ResidenceTextField;
     private JLabel nameLabel;
     private JButton createButton;
+    private JTextField lastNameTextField;
 
     public RegisterForm() {
         add(registrateForm);
@@ -28,13 +26,14 @@ public class RegisterForm extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         createButton.addActionListener(e -> {
-            String name = nameTextField.getText();
+            String firstName = firstNameTextField.getText();
+            String lastName = lastNameTextField.getText();
             String street = StreetTextField.getText();
             String houseNumber = HouseNumberTextField.getText();
             String houseNumberAddition = HouseNumberAdditionTextField.getText();
             String residence = ResidenceTextField.getText();
 
-            Boolean createAccount = new AccountDAO().createAccount(name,street,houseNumber,houseNumberAddition,residence);
+            Boolean createAccount = new AccountDAO().createAccount(firstName, lastName, street,houseNumber,houseNumberAddition,residence);
             if(createAccount){
                 System.out.println("Account created!");
                 dispose();

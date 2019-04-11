@@ -14,8 +14,8 @@ public class AccountDAO {
     }
 
     //Function to create a account
-    public boolean createAccount(String name, String street, String houseNumber, String houseNumberAddition, String residence) {
-        String query = "INSERT INTO Account(Name, Street, HouseNumber, HouseNumberAddition, Residence) VALUES ('" + name + "','" + street + "','" + houseNumber + "','" + houseNumberAddition + "','" + residence + "')";
+    public boolean createAccount(String name, String lastname, String street, String houseNumber, String houseNumberAddition, String residence) {
+        String query = "INSERT INTO Account(firstName, lastName, Street, HouseNumber, HouseNumberAddition, Residence) VALUES ('" + name + "','" + lastname + "','" + street + "''" + houseNumber + "','" + houseNumberAddition + "','" + residence + "')";
         Boolean successfull = new DatabaseConnection().setDataToTable(query);
         if (successfull) {
             System.out.println("Succesfully created account!");
@@ -33,7 +33,8 @@ public class AccountDAO {
         try {
             while (resultSet.next()) {
                 Account accounts = new Account(
-                        resultSet.getString("Name"),
+                        resultSet.getString("firstName"),
+                        resultSet.getString("lastName"),
                         resultSet.getString("Street"),
                         resultSet.getString("HouseNumber"),
                         resultSet.getString("HouseNumberAddition"),
