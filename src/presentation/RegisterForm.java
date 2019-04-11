@@ -22,6 +22,8 @@ public class RegisterForm extends JFrame {
         setBackground(Color.black);
         setSize(300, 400);
         setTitle("Registrate account");
+        setResizable(false);
+
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
         centerFrame();
 

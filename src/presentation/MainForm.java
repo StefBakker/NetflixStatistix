@@ -35,6 +35,7 @@ public class MainForm extends JFrame {
         fillMoviesTable();
         fillSeriesTable();
         setSize(700,300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // When form opens center it in the middle of the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();

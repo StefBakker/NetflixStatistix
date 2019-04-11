@@ -20,6 +20,7 @@ public class LoginForm extends JFrame {
         setBackground(Color.black);
         setTitle("Netflix Statistix");
         setSize(700,300);
+        setResizable(false);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
         centerFrame();
 
