@@ -106,6 +106,23 @@ public class DatabaseConnection {
         return false;
     }
 
+    // Function to check if an user exists in the database and returns a boolean
+    public int getAccountID(String userName) {
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT ID FROM Account WHERE firstName = ?");
+            st.setString(1, userName);
+            ResultSet r1 = st.executeQuery();
+            if (r1.next()) {
+                return r1.getInt("ID");
+            } else {
+                System.out.println("ID not found");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return 0;
+    }
+
     // Function to retrieve all profiles from the give accountID
     public ArrayList getAllProfiles(int accountID) {
         ArrayList<Profile> profilesList = new ArrayList<>();

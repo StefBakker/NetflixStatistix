@@ -36,14 +36,16 @@ public class LoginForm extends JFrame {
         // Login button actionlistener
         loginButton.addActionListener(e -> {
             if(!userNameField.getText().isEmpty()){
-                Boolean userFound = new DatabaseConnection().checkIfUserExists(userNameField.getText());
+                String userName = userNameField.getText();
+                Boolean userFound = new DatabaseConnection().checkIfUserExists(userName);
                 if (userFound){
                     dispose();
 
                    // TODO add userID getter so that every account gets its own profiles, it is now set to an already existing account in the database
 
                     // Aka where now stands "1011" there has to go the userID.
-                    int userID = 1011;
+                    //int userID = 1011;
+                    int userID = new DatabaseConnection().getAccountID(userName);
                     ProfileForm profileForm = new ProfileForm(userID);
                     profileForm.setVisible(true);
                 }else{

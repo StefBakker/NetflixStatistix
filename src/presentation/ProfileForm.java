@@ -22,6 +22,7 @@ public class ProfileForm extends JFrame {
         setSize(300, 300);
         setResizable(false);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Center the frame
         centerFrame();
