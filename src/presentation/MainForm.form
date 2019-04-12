@@ -125,7 +125,7 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <text value="Type hier de gewenste film"/>
+                  <text value="Type hier de gewenste Serie"/>
                 </properties>
               </component>
               <component id="70ec1" class="javax.swing.JLabel">
@@ -177,7 +177,7 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <text value="Type hier het gewenste profiel"/>
+                  <text value="Type hier het gewenste Profiel"/>
                 </properties>
               </component>
               <component id="5f760" class="javax.swing.JButton" binding="button2" default-binding="true">
@@ -195,7 +195,7 @@
                   </grid>
                 </constraints>
                 <properties>
-                  <text value="Type hier de gewenste film"/>
+                  <text value="Type hier de gewenste Serie"/>
                 </properties>
               </component>
               <component id="f50b" class="javax.swing.JLabel">
