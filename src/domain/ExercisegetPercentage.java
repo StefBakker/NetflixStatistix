@@ -1,12 +1,12 @@
 package domain;
 
-public class Exercise1 {
+public class ExercisegetPercentage {
 
     private String serieTitle;
     private String episodeNr;
     private String watchedPercentage;
 
-    public Exercise1(String serieTitle, String episodeNr, String watchedPercentage) {
+    public ExercisegetPercentage(String serieTitle, String episodeNr, String watchedPercentage) {
         this.serieTitle = serieTitle;
         this.episodeNr = episodeNr;
         this.watchedPercentage = watchedPercentage;

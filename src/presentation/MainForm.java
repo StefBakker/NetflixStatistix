@@ -1,10 +1,6 @@
 package presentation;
 
-import domain.Account;
-import domain.Exercise1;
-import domain.Movie;
-import domain.Serie;
-import datalayer.AccountDAO;
+import domain.*;
 import datalayer.DatabaseConnection;
 import datalayer.MovieDAO;
 import datalayer.SerieDAO;
@@ -29,14 +25,19 @@ public class MainForm extends JFrame {
     private JTable seriesTable;
     private JTable task1Table;
     private JTable task2Table;
-    private JTable table3;
+    private JTable task3Table;
     private JTextField task1seriename;
     private JTextField task2seriename;
     private JTextField task2profileid;
-    private JTextField textField4;
+    private JTextField task3profileid;
     private JButton button1;
     private JButton button2;
     private JButton button3;
+    private JTable task4Table;
+    private JTable task5Table;
+    private JTable task6Table;
+    private JTextField task6filmName;
+    private JButton button4;
 
     public MainForm(String profile) {
 
@@ -53,6 +54,8 @@ public class MainForm extends JFrame {
         // Fill tables
         fillMoviesTable();
         fillSeriesTable();
+        fillTask4();
+        fillTask5();
 
 
         // When form opens center it in the middle of the screen
@@ -76,6 +79,18 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fillTask2();
+            }
+        });
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fillTask3();
+            }
+        });
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fillTask6();
             }
         });
     }
@@ -137,15 +152,15 @@ public class MainForm extends JFrame {
         }
     }
     private void fillTask1() {
-        ArrayList<Exercise1> exercise1 = new SerieDAO().getTask1(task1seriename.getText());
+        ArrayList<ExercisegetPercentage> exercisegetPercentage = new SerieDAO().getTask1(task1seriename.getText());
         String[] col = {"SerieTitle", "EpisodeNr", "WatchedPercentage"};
         DefaultTableModel tableModel = new DefaultTableModel(col, 0);
         task1Table.setModel(tableModel);
 
-        for (Exercise1 exercise1S : exercise1) {
-            String serieTitle = exercise1S.getSerieTitle();
-            String episodeNr = exercise1S.getEpisodeNr();
-            String watchedPercentage = exercise1S.getWatchedPercentage();
+        for (ExercisegetPercentage exercisegetPercentageS : exercisegetPercentage) {
+            String serieTitle = exercisegetPercentageS.getSerieTitle();
+            String episodeNr = exercisegetPercentageS.getEpisodeNr();
+            String watchedPercentage = exercisegetPercentageS.getWatchedPercentage();
 
             Object[] excerise1Data = {serieTitle, episodeNr, watchedPercentage};
 
@@ -153,20 +168,77 @@ public class MainForm extends JFrame {
         }
     }
     private void fillTask2() {
-        ArrayList<Exercise1> exercise1 = new SerieDAO().getTask2(task2seriename.getText(), task2profileid.getText());
+        ArrayList<ExercisegetPercentage> exercisegetPercentage = new SerieDAO().getTask2(task2seriename.getText(), task2profileid.getText());
         String[] col = {"SerieTitle", "EpisodeNr", "WatchedPercentage"};
         DefaultTableModel tableModel = new DefaultTableModel(col, 0);
         task2Table.setModel(tableModel);
 
-        for (Exercise1 exercise1S : exercise1) {
-            String serieTitle = exercise1S.getSerieTitle();
-            String episodeNr = exercise1S.getEpisodeNr();
-            String watchedPercentage = exercise1S.getWatchedPercentage();
+        for (ExercisegetPercentage exercisegetPercentageS : exercisegetPercentage) {
+            String serieTitle = exercisegetPercentageS.getSerieTitle();
+            String episodeNr = exercisegetPercentageS.getEpisodeNr();
+            String watchedPercentage = exercisegetPercentageS.getWatchedPercentage();
 
             Object[] excerise2Data = {serieTitle, episodeNr, watchedPercentage};
 
             tableModel.addRow(excerise2Data);
         }
     }
+    private void fillTask3() {
+        ArrayList<Exercise3> exercise3 = new SerieDAO().getTask3(task3profileid.getText());
+        String[] col = {"programTitle"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
+        task3Table.setModel(tableModel);
 
+        for (Exercise3 exercise3S : exercise3) {
+            String programTitle = exercise3S.getProgramTitle();
+
+            Object[] excerise3Data = {programTitle};
+
+            tableModel.addRow(excerise3Data);
+        }
+    }
+
+    private void fillTask4() {
+        ArrayList<Exercise4> exercise4 = new SerieDAO().getTask4();
+        String[] col = {"programTitle", "duration"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
+        task4Table.setModel(tableModel);
+
+        for (Exercise4 exercise4S : exercise4) {
+            String programTitle = exercise4S.getProgramTitle();
+            String duration = exercise4S.getDuration();
+
+            Object[] excerise4Data = {programTitle, duration};
+
+            tableModel.addRow(excerise4Data);
+        }
+    }
+    private void fillTask5() {
+        ArrayList<Exercise5> exercise5 = new SerieDAO().getTask5();
+        String[] col = {"firstname"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
+        task5Table.setModel(tableModel);
+
+        for (Exercise5 exercise5S : exercise5) {
+            String firstname = exercise5S.getFirstname();
+
+            Object[] excerise5Data = {firstname};
+
+            tableModel.addRow(excerise5Data);
+        }
+    }
+    private void fillTask6() {
+        ArrayList<Exercise6> exercise6 = new SerieDAO().getTask6(task6filmName.getText());
+        String[] col = {"amount"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
+        task6Table.setModel(tableModel);
+
+        for (Exercise6 exercise6S : exercise6) {
+            String numberofUsersCompleted = exercise6S.getNumberofUsersCompleted();
+
+            Object[] excerise6Data = {numberofUsersCompleted};
+
+            tableModel.addRow(excerise6Data);
+        }
+    }
 }
