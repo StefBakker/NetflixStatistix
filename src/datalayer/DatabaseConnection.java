@@ -143,4 +143,16 @@ public class DatabaseConnection {
         }
         return profilesList;
     }
+
+    public boolean deleteAccount(int ID){
+        try{
+            PreparedStatement st = conn.prepareStatement("DELETE FROM Account WHERE ID = ?");
+            st.setInt(1, ID);
+            ResultSet resultSet = st.executeQuery();
+            return true;
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+        return false;
+    }
 }

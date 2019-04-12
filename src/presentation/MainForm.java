@@ -31,15 +31,16 @@ public class MainForm extends JFrame {
     private JTextField task2profileid;
     private JTextField task3profileid;
     private JButton button1;
-    private JButton button2;
     private JButton button3;
+    private JButton button2;
     private JTable task4Table;
     private JTable task5Table;
     private JTable task6Table;
     private JTextField task6filmName;
     private JButton button4;
+    private JButton deleteAccountButton;
 
-    public MainForm(String profile) {
+    public MainForm(String profile, int accountID) {
 
         // Add components
         add(JPanel);
@@ -57,16 +58,34 @@ public class MainForm extends JFrame {
         fillTask4();
         fillTask5();
 
+        // Set button attributes
+        deleteAccountButton.setBackground(Color.RED);
+
 
         // When form opens center it in the middle of the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+
+
+        // Actionlisteners
+
+        // Connectionbuttonlistener for testing database connection
         testConnectionButton.addActionListener(e -> {
             Boolean connectionSuccesfull = new DatabaseConnection().testConnection();
             if (connectionSuccesfull) {
                 testConnectionLabel.setText("Connected!");
             } else {
                 testConnectionLabel.setText("Failed..");
+            }
+        });
+        // Deletebuttonlistener for deleting accounts
+        deleteAccountButton.addActionListener(e -> {
+            Boolean accountDeleteSuccesfull = new DatabaseConnection().deleteAccount(accountID);
+            if(accountDeleteSuccesfull){
+                System.out.println("Account was succesfully deleted");
+            }
+            else {
+                System.out.println("Something went wrong, account was not deleted, try again retard");
             }
         });
         button3.addActionListener(new ActionListener() {
@@ -85,8 +104,8 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fillTask3();
-            }
-        });
+        }
+            });
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -94,6 +113,7 @@ public class MainForm extends JFrame {
             }
         });
     }
+
 
     // Function to get all the movies and fill the list
     private void fillMoviesTable() {
