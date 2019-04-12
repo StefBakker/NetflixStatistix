@@ -1,6 +1,7 @@
 package presentation;
 
 import domain.Account;
+import domain.Exercise1;
 import domain.Movie;
 import domain.Serie;
 import datalayer.AccountDAO;
@@ -11,6 +12,8 @@ import datalayer.SerieDAO;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class MainForm extends JFrame {
@@ -24,6 +27,16 @@ public class MainForm extends JFrame {
     private JLabel JLabelProgram;
     private JLabel JLabelInfo;
     private JTable seriesTable;
+    private JTable task1Table;
+    private JTable task2Table;
+    private JTable table3;
+    private JTextField task1seriename;
+    private JTextField task2seriename;
+    private JTextField task2profileid;
+    private JTextField textField4;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
 
     public MainForm(String profile) {
 
@@ -51,6 +64,18 @@ public class MainForm extends JFrame {
                 testConnectionLabel.setText("Connected!");
             } else {
                 testConnectionLabel.setText("Failed..");
+            }
+        });
+        button3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fillTask1();
+            }
+        });
+        button2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fillTask2();
             }
         });
     }
@@ -109,6 +134,38 @@ public class MainForm extends JFrame {
 
             // Add tablemodel row with the given moviedata
             tableModel.addRow(serieData);
+        }
+    }
+    private void fillTask1() {
+        ArrayList<Exercise1> exercise1 = new SerieDAO().getTask1(task1seriename.getText());
+        String[] col = {"SerieTitle", "EpisodeNr", "WatchedPercentage"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
+        task1Table.setModel(tableModel);
+
+        for (Exercise1 exercise1S : exercise1) {
+            String serieTitle = exercise1S.getSerieTitle();
+            String episodeNr = exercise1S.getEpisodeNr();
+            String watchedPercentage = exercise1S.getWatchedPercentage();
+
+            Object[] excerise1Data = {serieTitle, episodeNr, watchedPercentage};
+
+            tableModel.addRow(excerise1Data);
+        }
+    }
+    private void fillTask2() {
+        ArrayList<Exercise1> exercise1 = new SerieDAO().getTask2(task2seriename.getText(), task2profileid.getText());
+        String[] col = {"SerieTitle", "EpisodeNr", "WatchedPercentage"};
+        DefaultTableModel tableModel = new DefaultTableModel(col, 0);
+        task2Table.setModel(tableModel);
+
+        for (Exercise1 exercise1S : exercise1) {
+            String serieTitle = exercise1S.getSerieTitle();
+            String episodeNr = exercise1S.getEpisodeNr();
+            String watchedPercentage = exercise1S.getWatchedPercentage();
+
+            Object[] excerise2Data = {serieTitle, episodeNr, watchedPercentage};
+
+            tableModel.addRow(excerise2Data);
         }
     }
 
