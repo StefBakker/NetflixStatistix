@@ -11,6 +11,8 @@ import datalayer.SerieDAO;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class MainForm extends JFrame {
@@ -24,8 +26,9 @@ public class MainForm extends JFrame {
     private JLabel JLabelProgram;
     private JLabel JLabelInfo;
     private JTable seriesTable;
+    private JButton deleteAccountButton;
 
-    public MainForm(String profile) {
+    public MainForm(String profile, int accountID) {
 
         // Add components
         add(JPanel);
@@ -41,10 +44,18 @@ public class MainForm extends JFrame {
         fillMoviesTable();
         fillSeriesTable();
 
+        // Set button attributes
+        deleteAccountButton.setBackground(Color.RED);
+
 
         // When form opens center it in the middle of the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
+
+
+        // Actionlisteners
+
+        // Connectionbuttonlistener for testing database connection
         testConnectionButton.addActionListener(e -> {
             Boolean connectionSuccesfull = new DatabaseConnection().testConnection();
             if (connectionSuccesfull) {
@@ -53,7 +64,18 @@ public class MainForm extends JFrame {
                 testConnectionLabel.setText("Failed..");
             }
         });
+        // Deletebuttonlistener for deleting accounts
+        deleteAccountButton.addActionListener(e -> {
+            Boolean accountDeleteSuccesfull = new DatabaseConnection().deleteAccount(accountID);
+            if(accountDeleteSuccesfull){
+                System.out.println("Account was succesfully deleted");
+            }
+            else {
+                System.out.println("Something went wrong, account was not deleted, try again retard");
+            }
+        });
     }
+
 
     // Function to get all the movies and fill the list
     private void fillMoviesTable() {

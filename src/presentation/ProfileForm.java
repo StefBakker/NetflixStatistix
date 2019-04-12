@@ -10,8 +10,10 @@ import java.util.ArrayList;
 public class ProfileForm extends JFrame {
     private JPanel mainPanel;
     private JPanel profilePanel;
+    private int accountID;
 
     public ProfileForm(int accountId) {
+        this.accountID = accountId;
         // Add components
         add(mainPanel);
         add(profilePanel);
@@ -20,7 +22,7 @@ public class ProfileForm extends JFrame {
         getProfilesForAccount(accountId);
         setTitle("Netflix Statistix - Choose profile");
         setSize(300, 300);
-        setResizable(false);
+        setResizable(true);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -47,7 +49,7 @@ public class ProfileForm extends JFrame {
             // Create an actionListener to open next form
             btn.addActionListener(e -> {
                 dispose();
-                MainForm mainForm = new MainForm(profile.getName());
+                MainForm mainForm = new MainForm(profile.getName(), accountID);
                 mainForm.setVisible(true);
             });
 

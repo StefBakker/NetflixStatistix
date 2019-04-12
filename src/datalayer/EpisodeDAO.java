@@ -6,5 +6,4 @@ public class EpisodeDAO extends SerieDAO {
     private String name;
     private int amountOfViews;
     private int individualProgress;
-
 }
