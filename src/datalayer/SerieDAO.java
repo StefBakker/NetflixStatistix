@@ -89,9 +89,10 @@ public class SerieDAO {
 
         ArrayList<Exercise3> task3 = new ArrayList<>();
         String query =
-                "SELECT ProgramTitle\n" +
+                "SELECT WatchedPrograms.ProgramTitle\n" +
                         "FROM WatchedPrograms\n" +
-                        "WHERE WatchedPercentage = 100 and ProfileID = "+task3Profile;
+                        "JOIN Movie ON WatchedPrograms.ProgramTitle = Movie.ProgramTitle\n" +
+                        "WHERE WatchedPercentage = 100 and ProfileID = "+task3Profile+" AND WatchedPrograms.ProgramTitle = dbo.Movie.ProgramTitle";
         ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
         try {
             while (resultSet.next()) {
