@@ -80,12 +80,14 @@ public class MainForm extends JFrame {
         });
         // Deletebuttonlistener for deleting accounts
         deleteAccountButton.addActionListener(e -> {
-            Boolean accountDeleteSuccesfull = new DatabaseConnection().deleteAccount(accountID);
-            if(accountDeleteSuccesfull){
-                System.out.println("Account was succesfully deleted");
-            }
-            else {
-                System.out.println("Something went wrong, account was not deleted, try again retard");
+            int opt = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?", "Delete", JOptionPane.YES_NO_OPTION);
+            if (opt==0) {
+                Boolean accountDeleteSuccesfull = new DatabaseConnection().deleteAccount(accountID);
+                if (accountDeleteSuccesfull) {
+                    System.out.println("Account was succesfully deleted");
+                } else {
+                    System.out.println("Something went wrong, account was not deleted, try again retard");
+                }
             }
         });
         button3.addActionListener(new ActionListener() {
