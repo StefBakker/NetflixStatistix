@@ -115,7 +115,7 @@ public class SerieDAO {
                         "INNER JOIN Movie\n" +
                         "ON Program.Title = Movie.ProgramTitle\n" +
                         "WHERE Movie.AgeIndication < 16\n" +
-                        "ORDER BY Program.Duration";
+                        "ORDER BY Program.Duration desc";
         ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
         try {
             while (resultSet.next()) {
