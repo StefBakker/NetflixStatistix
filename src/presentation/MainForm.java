@@ -78,7 +78,7 @@ public class MainForm extends JFrame {
                 testConnectionLabel.setText("Failed..");
             }
         });
-        // Deletebuttonlistener for deleting accounts
+        // Deletebuttonlistener for deleting accounts, closes the application upon deletion
         deleteAccountButton.addActionListener(e -> {
             int opt = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?", "Delete", JOptionPane.YES_NO_OPTION);
             if (opt==0) {
@@ -87,6 +87,7 @@ public class MainForm extends JFrame {
                     System.out.println("Account was succesfully deleted");
                 } else {
                     System.out.println("Something went wrong, account was not deleted, try again retard");
+                    System.exit(0);
                 }
             }
         });

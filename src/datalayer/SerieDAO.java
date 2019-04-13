@@ -34,10 +34,11 @@ public class SerieDAO {
     public ArrayList<ExercisegetPercentage> getTask1(String input1) {
         ArrayList<ExercisegetPercentage> task1 = new ArrayList<>();
         String query =
-                "SELECT SerieTitle, EpisodeNr, WatchedPrograms.WatchedPercentage\n" +
+                "SELECT SerieTitle, EpisodeNr, AVG(WatchedPrograms.WatchedPercentage) AS WatchedPercentage\n" +
                         "FROM Episode\n" +
                         "JOIN WatchedPrograms ON Episode.ProgramTitle=WatchedPrograms.ProgramTitle\n" +
-                        "AND SerieTitle = '"+input1+"'";
+                        "AND SerieTitle = '"+input1+"'\n" +
+                        "GROUP BY SerieTitle, EpisodeNr;";
         ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
         try {
             while (resultSet.next()) {
