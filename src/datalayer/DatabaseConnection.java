@@ -95,10 +95,10 @@ public class DatabaseConnection {
             st.setString(1, userName);
             ResultSet r1 = st.executeQuery();
             if (r1.next()) {
-                System.out.println("Found!");
+                //System.out.println("Found!");
                 return true;
             } else {
-                System.out.println("User doesn't exist");
+                //System.out.println("User doesn't exist");
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -154,5 +154,46 @@ public class DatabaseConnection {
             System.out.println(e);
         }
         return false;
+    }
+
+    public Boolean createProfile(String name, int accountID) {
+        try{
+            PreparedStatement st = conn.prepareStatement("INSERT INTO Profile (firstName, AccountID) VALUES(?,?)");
+            st.setString(1, name);
+            st.setInt(2, accountID);
+            int i = st.executeUpdate();
+            if (i > 0) {
+                System.out.println("success");
+                return true;
+            } else {
+                System.out.println("stuck somewhere");
+                return false;
+            }
+        }catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public int countProfilesOfAccount(int accountID) {
+        int counter = 0;
+
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM Profile WHERE AccountID=?");
+            st.setInt(1, accountID);
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("AccountID");
+
+                if(id != 0){
+                 counter++;
+                }
+            }
+
+        }catch (SQLException e){
+
+        }
+        return counter;
     }
 }
