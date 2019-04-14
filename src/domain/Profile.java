@@ -12,16 +12,5 @@ public class Profile {
     public String getName() {
         return Name;
     }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getDateOfBirth() {
-        return DateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        DateOfBirth = dateOfBirth;
-    }
+    
 }

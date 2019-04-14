@@ -23,7 +23,7 @@ public class LoginForm extends JFrame {
         // Sets the look and feel of the program to WindowsClassic
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel");
-        } catch (Exception e){
+        } catch (Exception e) {
 
         }
 
@@ -40,7 +40,7 @@ public class LoginForm extends JFrame {
         // Set windows attributes
         setBackground(Color.black);
         setTitle("Netflix Statistix");
-        setSize(700,300);
+        setSize(700, 300);
         setResizable(false);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
         centerFrame();
@@ -54,24 +54,21 @@ public class LoginForm extends JFrame {
 
         // Login button actionlistener
         loginButton.addActionListener(e -> {
-            if(!userNameField.getText().isEmpty()){
+            if (!userNameField.getText().isEmpty()) {
                 String userName = userNameField.getText();
                 Boolean userFound = new DatabaseConnection().checkIfUserExists(userName);
-                if (userFound){
+                if (userFound) {
+
+                    // Dispose current form
                     dispose();
-
-                   // TODO add userID getter so that every account gets its own profiles, it is now set to an already existing account in the database
-
-                    // Aka where now stands "1011" there has to go the userID.
-                    //int userID = 1011;
                     int userID = new DatabaseConnection().getAccountID(userName);
                     ProfileForm profileForm = new ProfileForm(userID);
                     profileForm.setVisible(true);
-                }else{
+                } else {
                     System.out.println("User not found");
                     JOptionPane.showMessageDialog(null, "Username not found!");
                 }
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Please enter a username:");
             }
 

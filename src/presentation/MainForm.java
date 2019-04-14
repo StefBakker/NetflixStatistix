@@ -67,7 +67,6 @@ public class MainForm extends JFrame {
         testConnectionButton.setFocusPainted(false);
 
 
-
         // When form opens center it in the middle of the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
@@ -87,7 +86,7 @@ public class MainForm extends JFrame {
         // Deletebuttonlistener for deleting accounts, closes the application upon deletion
         deleteAccountButton.addActionListener(e -> {
             int opt = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete this account?", "Delete", JOptionPane.YES_NO_OPTION);
-            if (opt==0) {
+            if (opt == 0) {
                 Boolean accountDeleteSuccesfull = new DatabaseConnection().deleteAccount(accountID);
                 if (accountDeleteSuccesfull) {
                     System.out.println("Something went wrong, account was not deleted.");
@@ -113,8 +112,8 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 fillTask3();
-        }
-            });
+            }
+        });
         button4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -180,6 +179,7 @@ public class MainForm extends JFrame {
             tableModel.addRow(serieData);
         }
     }
+
     private void fillTask1() {
         ArrayList<ExercisegetPercentage> exercisegetPercentage = new SerieDAO().getTask1(task1seriename.getText());
         String[] col = {"SerieTitle", "EpisodeNr", "WatchedPercentage"};
@@ -196,6 +196,7 @@ public class MainForm extends JFrame {
             tableModel.addRow(excerise1Data);
         }
     }
+
     private void fillTask2() {
         ArrayList<ExercisegetPercentage> exercisegetPercentage = new SerieDAO().getTask2(task2seriename.getText(), task2profileid.getText());
         String[] col = {"SerieTitle", "EpisodeNr", "WatchedPercentage"};
@@ -212,6 +213,7 @@ public class MainForm extends JFrame {
             tableModel.addRow(excerise2Data);
         }
     }
+
     private void fillTask3() {
         ArrayList<Exercise3> exercise3 = new SerieDAO().getTask3(task3profileid.getText());
         String[] col = {"programTitle"};
@@ -242,6 +244,7 @@ public class MainForm extends JFrame {
             tableModel.addRow(excerise4Data);
         }
     }
+
     private void fillTask5() {
         ArrayList<Exercise5> exercise5 = new SerieDAO().getTask5();
         String[] col = {"firstname"};
@@ -256,6 +259,7 @@ public class MainForm extends JFrame {
             tableModel.addRow(excerise5Data);
         }
     }
+
     private void fillTask6() {
         ArrayList<Exercise6> exercise6 = new SerieDAO().getTask6(task6filmName.getText());
         String[] col = {"amount"};

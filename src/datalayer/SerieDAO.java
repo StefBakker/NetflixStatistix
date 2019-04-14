@@ -31,21 +31,22 @@ public class SerieDAO {
         }
         return null;
     }
+
     public ArrayList<ExercisegetPercentage> getTask1(String input1) {
         ArrayList<ExercisegetPercentage> task1 = new ArrayList<>();
         String query =
                 "SELECT SerieTitle, EpisodeNr, AVG(WatchedPrograms.WatchedPercentage) AS WatchedPercentage\n" +
                         "FROM Episode\n" +
                         "JOIN WatchedPrograms ON Episode.ProgramTitle=WatchedPrograms.ProgramTitle\n" +
-                        "AND SerieTitle = '"+input1+"'\n" +
+                        "AND SerieTitle = '" + input1 + "'\n" +
                         "GROUP BY SerieTitle, EpisodeNr;";
-        ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
+        ResultSet resultSetTaskOne = new DatabaseConnection().getAllFromTable(query);
         try {
-            while (resultSet.next()) {
+            while (resultSetTaskOne.next()) {
                 ExercisegetPercentage exercisegetPercentage = new ExercisegetPercentage(
-                        resultSet.getString("SerieTitle"),
-                        resultSet.getString("EpisodeNr"),
-                        resultSet.getString("WatchedPercentage")
+                        resultSetTaskOne.getString("SerieTitle"),
+                        resultSetTaskOne.getString("EpisodeNr"),
+                        resultSetTaskOne.getString("WatchedPercentage")
                 );
                 task1.add(exercisegetPercentage);
             }
@@ -63,19 +64,19 @@ public class SerieDAO {
                 "SELECT SerieTitle, EpisodeNr, WatchedPrograms.WatchedPercentage\n" +
                         "FROM Episode\n" +
                         "JOIN WatchedPrograms ON Episode.ProgramTitle=WatchedPrograms.ProgramTitle\n" +
-                        "AND SerieTitle = '"+task2Serie+"' AND ProfileID = "+task2Profile;
+                        "AND SerieTitle = '" + task2Serie + "' AND ProfileID = " + task2Profile;
         System.out.println(
                 "SELECT SerieTitle, EpisodeNr, WatchedPrograms.WatchedPercentage\n" +
                         "FROM Episode\n" +
                         "JOIN WatchedPrograms ON Episode.ProgramTitle=WatchedPrograms.ProgramTitle\n" +
-                        "AND SerieTitle = '"+task2Serie+"' AND ProfileID = "+task2Profile);
-        ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
+                        "AND SerieTitle = '" + task2Serie + "' AND ProfileID = " + task2Profile);
+        ResultSet resultSetTaskTwo = new DatabaseConnection().getAllFromTable(query);
         try {
-            while (resultSet.next()) {
+            while (resultSetTaskTwo.next()) {
                 ExercisegetPercentage exercisegetPercentage = new ExercisegetPercentage(
-                        resultSet.getString("SerieTitle"),
-                        resultSet.getString("EpisodeNr"),
-                        resultSet.getString("WatchedPercentage")
+                        resultSetTaskTwo.getString("SerieTitle"),
+                        resultSetTaskTwo.getString("EpisodeNr"),
+                        resultSetTaskTwo.getString("WatchedPercentage")
                 );
                 task2.add(exercisegetPercentage);
             }
@@ -85,6 +86,7 @@ public class SerieDAO {
         }
         return null;
     }
+
     public ArrayList<Exercise3> getTask3(String task3Profile) {
 
         ArrayList<Exercise3> task3 = new ArrayList<>();
@@ -92,7 +94,7 @@ public class SerieDAO {
                 "SELECT WatchedPrograms.ProgramTitle\n" +
                         "FROM WatchedPrograms\n" +
                         "JOIN Movie ON WatchedPrograms.ProgramTitle = Movie.ProgramTitle\n" +
-                        "WHERE WatchedPercentage = 100 and ProfileID = "+task3Profile+" AND WatchedPrograms.ProgramTitle = dbo.Movie.ProgramTitle";
+                        "WHERE WatchedPercentage = 100 and ProfileID = " + task3Profile + " AND WatchedPrograms.ProgramTitle = dbo.Movie.ProgramTitle";
         ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
         try {
             while (resultSet.next()) {
@@ -107,6 +109,7 @@ public class SerieDAO {
         }
         return null;
     }
+
     public ArrayList<Exercise4> getTask4() {
 
         ArrayList<Exercise4> task4 = new ArrayList<>();
@@ -132,6 +135,7 @@ public class SerieDAO {
         }
         return null;
     }
+
     public ArrayList<Exercise5> getTask5() {
 
         ArrayList<Exercise5> task5 = new ArrayList<>();
@@ -162,7 +166,7 @@ public class SerieDAO {
         String query =
                 "SELECT COUNT(ProgramTitle) as Amount\n" +
                         "FROM WatchedPrograms\n" +
-                        "WHERE WatchedPercentage >= 100 and ProgramTitle = '"+filmname+"'";
+                        "WHERE WatchedPercentage >= 100 and ProgramTitle = '" + filmname + "'";
         ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
         try {
             while (resultSet.next()) {

@@ -36,13 +36,14 @@ public class ConfigReader {
             } else {
                 throw new FileNotFoundException("property file '" + propFileName + "' not found in the classpath");
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     /**
      * returns an jdbc sql authentication url based on configured values in config.properties
+     *
      * @return the connectionURL
      */
     public String getConnectionURL() {
@@ -74,7 +75,7 @@ public class ConfigReader {
             } else {
                 throw new ConfigurationException("authenticationType " + authType + " is not a valid authenticationType, use integrated or sql instead");
             }
-        } catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -82,7 +83,7 @@ public class ConfigReader {
     }
 
     public static ConfigReader getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new ConfigReader();
         }
 

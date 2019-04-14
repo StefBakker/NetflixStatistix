@@ -1,5 +1,6 @@
 package presentation;
 
+import datalayer.DatabaseConnection;
 import datalayer.ProfileDAO;
 import domain.Profile;
 
@@ -91,6 +92,38 @@ public class ProfileForm extends JFrame {
             // add the button to the profilePanel
             profilePanel.add(btn);
         }
+        JButton btnAddProfile = new JButton();
+        btnAddProfile.setText("Create profile!");
+
+        btnAddProfile.addActionListener(e -> {
+            // a jframe here isn't strictly necessary, but it makes the example a little more real
+            JFrame frame = new JFrame("InputDialog Example #1");
+            frame.setTitle("Create profile");
+
+            // prompt the user to enter their name
+            String name = JOptionPane.showInputDialog(frame, "What's your name?");
+
+
+            //TODO
+            int countProfiles = new DatabaseConnection().countProfilesOfAccount(accountID);
+
+            if (countProfiles < 5) {
+                if (name != null && !name.isEmpty()) {
+                    Boolean createProfile = new DatabaseConnection().createProfile(name, accountID);
+                    if (createProfile) {
+                        dispose();
+                        ProfileForm profileForm = new ProfileForm(accountID);
+                        profileForm.setVisible(true);
+                    }
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Field can't be empty");
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "You can't have more then 5 profiles");
+            }
+        });
+        profilePanel.add(btnAddProfile);
 
     }
 
