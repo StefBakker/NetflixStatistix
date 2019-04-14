@@ -1,11 +1,5 @@
 package datalayer;
 
-import domain.Account;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 public class AccountDAO {
 
 
@@ -26,33 +20,8 @@ public class AccountDAO {
         } else {
             System.out.printf("Creating account failed!");
         }
+
+        // Returns the boolean
         return successfull;
     }
-
-    // Function to get all accounts
-    public ArrayList<Account> getAllAccounts() {
-        ArrayList<Account> accountsList = new ArrayList<>();
-        String query = "SELECT * FROM dbo.Account";
-        ResultSet resultSet = new DatabaseConnection().getAllFromTable(query);
-        try {
-            while (resultSet.next()) {
-                Account accounts = new Account(
-                        resultSet.getInt("ID"),
-                        resultSet.getString("firstName"),
-                        resultSet.getString("lastName"),
-                        resultSet.getString("Street"),
-                        resultSet.getString("HouseNumber"),
-                        resultSet.getString("HouseNumberAddition"),
-                        resultSet.getString("Residence")
-                );
-                accountsList.add(accounts);
-            }
-            return accountsList;
-
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-        return null;
-    }
-
 }

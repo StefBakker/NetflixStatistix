@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class AccountForm extends JFrame{
+public class AccountForm extends JFrame {
 
     private String firstName;
     private String lastName;
@@ -37,36 +37,33 @@ public class AccountForm extends JFrame{
 
         // Set the title and height and width of the form
         setTitle("Create new account");
-        setSize(400,300);
+        setSize(400, 300);
 
         // When form opens center it in the middle of the screen
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
 
         // This action happens when the "Create new Account" button is pressed
-        createNewAccountButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        createNewAccountButton.addActionListener(e -> {
 
-                // Get the text from the textfield and assign it to the right value
-                firstName = firstNameTextField.getText();
-                lastName = lastNameTextField.getText();
-                street = StreetTextField.getText();
-                houseNumber = HouseNumberTextField.getText();
-                houseNumberAddition = HouseNumberAdditionTextField.getText();
-                residence = ResidenceTextField.getText();
+            // Get the text from the textfield and assign it to the right value
+            firstName = firstNameTextField.getText();
+            lastName = lastNameTextField.getText();
+            street = StreetTextField.getText();
+            houseNumber = HouseNumberTextField.getText();
+            houseNumberAddition = HouseNumberAdditionTextField.getText();
+            residence = ResidenceTextField.getText();
 
-                boolean succesfull = new AccountDAO().createAccount(firstName, lastName, street, houseNumber, houseNumberAddition, residence);
-                if(succesfull){
-                    JOptionPane.showMessageDialog(null,"Succesfully created account!");
+            boolean succesfull = new AccountDAO().createAccount(firstName, lastName, street, houseNumber, houseNumberAddition, residence);
+            if (succesfull) {
+                JOptionPane.showMessageDialog(null, "Succesfully created account!");
 
-                    // Disposes the window if succesfull
-                    dispose();
-                }else{
-                    JOptionPane.showMessageDialog(null,"Failed creating account, please check if all values are filled in correctly");
-                }
-
+                // Disposes the window if succesfull
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Failed creating account, please check if all values are filled in correctly");
             }
+
         });
 
         createNewAccountButton.addMouseListener(new MouseAdapter() {

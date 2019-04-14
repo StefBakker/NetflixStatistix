@@ -53,18 +53,18 @@ public class DatabaseConnection {
     // Function to return all data from a table
     public ResultSet getAllFromTable(String query) {
 
+        // Give resultset a value
         ResultSet resultSet = null;
 
         try {
             if (conn.isValid(3)) {
                 Statement stmt = null;
                 try {
+                    // Create a connection statement
                     stmt = conn.createStatement();
-                } catch (SQLException e) {
-                    System.out.println(e);
-                }
-                try {
+                    // Execute statement
                     resultSet = stmt.executeQuery(query);
+
                 } catch (SQLException e) {
                     System.out.println(e);
                 }
@@ -72,8 +72,9 @@ public class DatabaseConnection {
             return resultSet;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
+        // Return null if no resultset results
         return null;
     }
 
@@ -99,6 +100,7 @@ public class DatabaseConnection {
                 return true;
             } else {
                 //System.out.println("User doesn't exist");
+                return false;
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -144,32 +146,32 @@ public class DatabaseConnection {
         return profilesList;
     }
 
-    public boolean deleteAccount(int ID){
-        try{
+    public boolean deleteAccount(int ID) {
+        try {
             PreparedStatement st = conn.prepareStatement("DELETE FROM Account WHERE ID = ?");
             st.setInt(1, ID);
-            ResultSet resultSet = st.executeQuery();
-            return true;
-        }catch (SQLException e){
+            int i = st.executeUpdate();
+            if (i > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return false;
     }
 
     public Boolean createProfile(String name, int accountID) {
-        try{
+        try {
             PreparedStatement st = conn.prepareStatement("INSERT INTO Profile (firstName, AccountID) VALUES(?,?)");
             st.setString(1, name);
             st.setInt(2, accountID);
             int i = st.executeUpdate();
             if (i > 0) {
-                System.out.println("success");
                 return true;
             } else {
-                System.out.println("stuck somewhere");
                 return false;
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return false;
@@ -186,13 +188,13 @@ public class DatabaseConnection {
             while (resultSet.next()) {
                 int id = resultSet.getInt("AccountID");
 
-                if(id != 0){
-                 counter++;
+                if (id != 0) {
+                    counter++;
                 }
             }
 
-        }catch (SQLException e){
-
+        } catch (SQLException e) {
+            System.out.println(e);
         }
         return counter;
     }

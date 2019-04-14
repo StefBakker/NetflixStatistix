@@ -9,7 +9,7 @@ public class ProfileDAO {
     public ProfileDAO() {
     }
 
-    public ArrayList<Profile> getAllProfiles(int accountID){
+    public ArrayList<Profile> getAllProfiles(int accountID) {
         ArrayList<Profile> profilesList = new DatabaseConnection().getAllProfiles(accountID);
         return profilesList;
     }

@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -117,11 +116,11 @@ public class ProfileForm extends JFrame {
                         profileForm.setVisible(true);
                     }
 
-                }else{
-                    JOptionPane.showMessageDialog(null,"Field can't be empty");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Field can't be empty");
                 }
-            }else{
-                JOptionPane.showMessageDialog(null,"You can't have more then 5 profiles");
+            } else {
+                JOptionPane.showMessageDialog(null, "You can't have more then 5 profiles");
             }
         });
         profilePanel.add(btnAddProfile);
