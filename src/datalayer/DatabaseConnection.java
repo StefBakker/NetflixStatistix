@@ -1,92 +1,201 @@
 package datalayer;
 
+import domain.Profile;
 import util.ConfigReader;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseConnection {
 
-    private Connection connection;
-    private Statement statement;
+    private Connection conn;
+    private String DatabaseConnectionURL;
 
-    private String connectionConfig;
-
+    // Constructor
     public DatabaseConnection() {
-        connection = null;
-        statement = null;
 
-        connectionConfig = ConfigReader.getInstance().getConnectionURL();
-    }
-
-    public boolean openConnection() {
-        boolean result = false;
-
-        if (connection == null) {
-            try {
-                connection = DriverManager.getConnection(connectionConfig);
-
-                if (connection != null) {
-                    statement = connection.createStatement();
-                }
-
-                result = true;
-            } catch (SQLException e) {
-                System.out.println(e);
-                result = false;
-            }
-        } else {
-            result = true;
-        }
-        return result;
-    }
-
-    public boolean isConnected() {
-        boolean connected = false;
-
-        if (connection != null && statement != null) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public void closeConnection() {
+        // Initiate the connection to the database
+        DatabaseConnectionURL = new ConfigReader().getConnectionURL();
         try {
-            statement.close();
+            conn = DriverManager.getConnection(DatabaseConnectionURL);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
-            connection.close();
-        } catch (Exception e) {
+    // Function to set data to a certain table in the databae
+    public boolean setDataToTable(String query) {
+        try {
+            // Check if the connection is valid with an timeout for 3 seconds
+            if (conn.isValid(3)) {
+
+                // Create statement
+                Statement stmt;
+                stmt = conn.createStatement();
+
+                // Execute the statement with the given query
+                stmt.executeQuery(query);
+
+                // Close connections
+                stmt.close();
+                conn.close();
+                return true;
+            } else {
+                // Give error if database isn't connected or found
+                System.out.println("No database connection!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    // Function to return all data from a table
+    public ResultSet getAllFromTable(String query) {
+
+        // Give resultset a value
+        ResultSet resultSet = null;
+
+        try {
+            if (conn.isValid(3)) {
+                Statement stmt = null;
+                try {
+                    // Create a connection statement
+                    stmt = conn.createStatement();
+                    // Execute statement
+                    resultSet = stmt.executeQuery(query);
+
+                } catch (SQLException e) {
+                    System.out.println(e);
+                }
+            }
+            return resultSet;
+
+        } catch (SQLException e) {
             System.out.println(e);
         }
+        // Return null if no resultset results
+        return null;
     }
 
-    public ResultSet executeSelectQuery(String query) {
-        ResultSet result = null;
+    // Function to check the database connection
+    public Boolean testConnection() {
 
-        if (query != null) {
-            try {
-                result = statement.executeQuery(query);
-            } catch (Exception e) {
-                System.out.println(e);
-                result = null;
-            }
+        try {
+            return conn.isValid(5);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-        return result;
+        return false;
     }
 
-    public boolean executeInsertQuery(String query) {
-        boolean result = false;
-
-        if (query != null) {
-            try {
-                statement.executeUpdate(query);
-                result = true;
-            } catch (SQLException e) {
-                System.out.println(e);
-                result = false;
+    // Function to check if an user exists in the database and returns a boolean
+    public Boolean checkIfUserExists(String userName) {
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM Account WHERE firstName = ?");
+            st.setString(1, userName);
+            ResultSet r1 = st.executeQuery();
+            if (r1.next()) {
+                //System.out.println("Found!");
+                return true;
+            } else {
+                //System.out.println("User doesn't exist");
+                return false;
             }
+        } catch (SQLException e) {
+            System.out.println(e);
         }
-        return result;
+        return false;
+    }
+
+    // Function to check if an user exists in the database and returns a boolean
+    public int getAccountID(String userName) {
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT ID FROM Account WHERE firstName = ?");
+            st.setString(1, userName);
+            ResultSet r1 = st.executeQuery();
+            if (r1.next()) {
+                return r1.getInt("ID");
+            } else {
+                System.out.println("ID not found");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return 0;
+    }
+
+    // Function to retrieve all profiles from the give accountID
+    public ArrayList getAllProfiles(int accountID) {
+        ArrayList<Profile> profilesList = new ArrayList<>();
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM Profile WHERE AccountID = ?");
+            st.setInt(1, accountID);
+            ResultSet resultSet = st.executeQuery();
+            while (resultSet.next()) {
+                Profile profiles = new Profile(
+                        resultSet.getString("firstName"),
+                        resultSet.getString("DateOfBirth")
+                );
+                profilesList.add(profiles);
+            }
+            return profilesList;
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return profilesList;
+    }
+
+    public boolean deleteAccount(int ID) {
+        try {
+            PreparedStatement st = conn.prepareStatement("DELETE FROM Account WHERE ID = ?");
+            st.setInt(1, ID);
+            int i = st.executeUpdate();
+            if (i > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    public Boolean createProfile(String name, int accountID) {
+        try {
+            PreparedStatement st = conn.prepareStatement("INSERT INTO Profile (firstName, AccountID) VALUES(?,?)");
+            st.setString(1, name);
+            st.setInt(2, accountID);
+            int i = st.executeUpdate();
+            if (i > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public int countProfilesOfAccount(int accountID) {
+        int counter = 0;
+
+        try {
+            PreparedStatement st = conn.prepareStatement("SELECT * FROM Profile WHERE AccountID=?");
+            st.setInt(1, accountID);
+            ResultSet resultSet = st.executeQuery();
+
+            while (resultSet.next()) {
+                int id = resultSet.getInt("AccountID");
+
+                if (id != 0) {
+                    counter++;
+                }
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return counter;
     }
 }

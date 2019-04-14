@@ -1,69 +1,27 @@
 package datalayer;
 
-import Domain.Account;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-
 public class AccountDAO {
 
-    private DatabaseConnection conn;
-
-    private Statement statement;
 
     public AccountDAO() {
-        // Initiate the connection to the database
-        conn = new DatabaseConnection();
+
     }
 
     //Function to create a account
-    public boolean createAccount(String name, String street, String houseNumber, String houseNumberAddition, String residence) {
+    public boolean createAccount(String name, String lastname, String street, String houseNumber, String houseNumberAddition, String residence) {
 
-        String query = "INSERT INTO Account(Name, Street, HouseNumber, HouseNumberAddition, Residence) VALUES ('" + name + "','" + street + "','" + houseNumber + "','" + houseNumberAddition + "','" + residence + "')";
-        if (conn.openConnection()) {
+        // Create a query string with the information needed for creating an account
+        String query = "INSERT INTO Account(firstName, lastName, Street, HouseNumber, HouseNumberAddition, Residence) VALUES ('" + name + "','" + lastname + "','" + street + "''" + houseNumber + "','" + houseNumberAddition + "','" + residence + "')";
 
-            boolean successfull = conn.executeInsertQuery(query);
-
-            conn.closeConnection();
-            if (successfull) {
-                return true;
-            } else {
-                return false;
-            }
+        // Create boolean to check if account is created
+        Boolean successfull = new DatabaseConnection().setDataToTable(query);
+        if (successfull) {
+            System.out.println("Succesfully created account!");
         } else {
-            System.out.println("No database connection!");
+            System.out.printf("Creating account failed!");
         }
-        return false;
-    }
 
-    // Function to get all accounts
-    public ArrayList<Account> getAllAccounts() {
-        ArrayList<Account> accountsList = new ArrayList<>();
-
-        if (conn.openConnection()) {
-            String query = "SELECT * FROM dbo.Account";
-
-            ResultSet resultSet = conn.executeSelectQuery(query);
-
-            try {
-                while (resultSet.next()) {
-                    Account accounts = new Account(
-                            resultSet.getString("Name"),
-                            resultSet.getString("Street"),
-                            resultSet.getString("HouseNumber"),
-                            resultSet.getString("HouseNumberAddition"),
-                            resultSet.getString("Residence")
-                    );
-                    accountsList.add(accounts);
-                }
-                conn.closeConnection();
-
-            } catch (SQLException e) {
-                System.out.println(e);
-            }
-        }
-        return null;
+        // Returns the boolean
+        return successfull;
     }
 }
