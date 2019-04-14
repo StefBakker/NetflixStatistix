@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class AccountForm extends JFrame{
 
@@ -26,6 +28,9 @@ public class AccountForm extends JFrame{
     private JTextField lastNameTextField;
 
     public AccountForm() {
+        // Set button attributes (purely Aesthetic)
+        createNewAccountButton.setBorderPainted(false);
+        createNewAccountButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
         // Add main panel with all its contents
         add(JPanel);
@@ -61,6 +66,21 @@ public class AccountForm extends JFrame{
                     JOptionPane.showMessageDialog(null,"Failed creating account, please check if all values are filled in correctly");
                 }
 
+            }
+        });
+
+        createNewAccountButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                super.mouseEntered(e);
+                createNewAccountButton.setBackground(Color.red);
+            }
+        });
+        createNewAccountButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                super.mouseExited(e);
+                createNewAccountButton.setBackground(new Color(229, 9, 20));
             }
         });
     }

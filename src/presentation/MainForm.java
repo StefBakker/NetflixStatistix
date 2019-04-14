@@ -48,7 +48,7 @@ public class MainForm extends JFrame {
 
         // Set attributes
         setTitle("Netflix statistix - Current profile: " + profile);
-        setSize(700, 300);
+        setSize(625, 525);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("images/Netflix.png")));
 
@@ -58,8 +58,14 @@ public class MainForm extends JFrame {
         fillTask4();
         fillTask5();
 
-        // Set button attributes
-        deleteAccountButton.setBackground(Color.RED);
+        //Set button attributes
+        button1.setFocusPainted(false);
+        button2.setFocusPainted(false);
+        button3.setFocusPainted(false);
+        button4.setFocusPainted(false);
+        deleteAccountButton.setFocusPainted(false);
+        testConnectionButton.setFocusPainted(false);
+
 
 
         // When form opens center it in the middle of the screen
@@ -84,9 +90,9 @@ public class MainForm extends JFrame {
             if (opt==0) {
                 Boolean accountDeleteSuccesfull = new DatabaseConnection().deleteAccount(accountID);
                 if (accountDeleteSuccesfull) {
-                    System.out.println("Account was succesfully deleted");
+                    System.out.println("Something went wrong, account was not deleted.");
                 } else {
-                    System.out.println("Something went wrong, account was not deleted, try again retard");
+                    System.out.println("Account was succesfully deleted");
                     System.exit(0);
                 }
             }

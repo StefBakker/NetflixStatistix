@@ -5,7 +5,11 @@
     <constraints>
       <xy x="20" y="20" width="1010" height="539"/>
     </constraints>
-    <properties/>
+    <properties>
+      <background color="-16777216"/>
+      <enabled value="true"/>
+      <foreground color="-16777216"/>
+    </properties>
     <border type="none"/>
     <children>
       <tabbedpane id="e0f36" binding="tabbedPanel">
@@ -14,7 +18,10 @@
             <preferred-size width="200" height="200"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-1767148"/>
+          <foreground color="-1"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="2b549" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -22,39 +29,65 @@
             <constraints>
               <tabbedpane title="Films"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-13421773"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="120c8" class="javax.swing.JTable" binding="moviesTable">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
-              <vspacer id="89dcd">
+              <component id="62440" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
-              </vspacer>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                  <text value="                 FilmNaam                                      Genre                                      Taal                                      LeeftijdsIndicatie"/>
+                </properties>
+              </component>
             </children>
           </grid>
-          <grid id="ced8" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="ced8" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <tabbedpane title="Series"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="b949c" class="javax.swing.JTable" binding="seriesTable">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
+              </component>
+              <component id="a8962" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <foreground color="-1"/>
+                  <text value="                SerieNaam                                 Genre                                      Taal                                      LeeftijdsIndicatie"/>
+                </properties>
               </component>
             </children>
           </grid>
@@ -63,7 +96,10 @@
             <constraints>
               <tabbedpane title="Debug_menu"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-16777216"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="7878b" class="javax.swing.JLabel">
@@ -71,6 +107,7 @@
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Test Database Connection"/>
                 </properties>
               </component>
@@ -89,6 +126,8 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-1767148"/>
+                  <foreground color="-1"/>
                   <text value="Test!"/>
                 </properties>
               </component>
@@ -97,6 +136,7 @@
                   <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value=""/>
                 </properties>
               </component>
@@ -107,7 +147,10 @@
             <constraints>
               <tabbedpane title="Account"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-16777216"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <hspacer id="e67b3">
@@ -125,6 +168,8 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-1767148"/>
+                  <foreground color="-1"/>
                   <text value="Delete Account?"/>
                 </properties>
               </component>
@@ -135,7 +180,10 @@
             <constraints>
               <tabbedpane title-resource-bundle="config" title-key="untitled"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="fef53" class="javax.swing.JButton" binding="button3" default-binding="true">
@@ -143,6 +191,8 @@
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-1767148"/>
+                  <foreground color="-1"/>
                   <text value="Zoek "/>
                 </properties>
               </component>
@@ -153,6 +203,8 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <background color="-13421773"/>
+                  <foreground color="-1"/>
                   <text value="Type hier de gewenste Serie"/>
                 </properties>
               </component>
@@ -161,6 +213,8 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
                   <text value="Voor een door de gebruiker geselecteerde serie, geef per aflevering het gemiddeld bekeken % van de tijdsduur. "/>
                 </properties>
               </component>
@@ -169,6 +223,7 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Bij elke aflevering worden het volgnummer én titel getoond."/>
                 </properties>
               </component>
@@ -178,13 +233,17 @@
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
               <component id="b0bf3" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="            SerieNaam                                        AfleveringNummer                                      PercentageBekeken"/>
                 </properties>
               </component>
@@ -195,7 +254,10 @@
             <constraints>
               <tabbedpane title-resource-bundle="config" title-key="untitled1"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="d316f" class="javax.swing.JTextField" binding="task2profileid">
@@ -205,6 +267,8 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <background color="-13421773"/>
+                  <foreground color="-1"/>
                   <text value="Type hier het gewenste Profiel"/>
                 </properties>
               </component>
@@ -213,6 +277,8 @@
                   <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-1767148"/>
+                  <foreground color="-1"/>
                   <text value="Zoek"/>
                 </properties>
               </component>
@@ -223,6 +289,8 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <background color="-13421773"/>
+                  <foreground color="-1"/>
                   <text value="Type hier de gewenste Serie"/>
                 </properties>
               </component>
@@ -231,6 +299,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Voor een door de gebruiker geselecteerde account en serie"/>
                 </properties>
               </component>
@@ -239,6 +308,7 @@
                   <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value=" geef per aflevering het gemiddeld bekeken % van de tijdsduur"/>
                 </properties>
               </component>
@@ -247,16 +317,20 @@
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="            SerieNaam                                        AfleveringNummer                                      PercentageBekeken"/>
                 </properties>
               </component>
               <component id="42124" class="javax.swing.JTable" binding="task2Table">
                 <constraints>
-                  <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                  <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
             </children>
           </grid>
@@ -265,7 +339,10 @@
             <constraints>
               <tabbedpane title="Opdracht 3&#10;"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="43db3" class="javax.swing.JTable" binding="task3Table">
@@ -274,7 +351,10 @@
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
               <component id="43ca1" class="javax.swing.JTextField" binding="task3profileid">
                 <constraints>
@@ -283,6 +363,8 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <background color="-13421773"/>
+                  <foreground color="-1"/>
                   <text value="Type hier het gewenste profiel"/>
                 </properties>
               </component>
@@ -291,6 +373,8 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-1767148"/>
+                  <foreground color="-1"/>
                   <text value="Zoek"/>
                 </properties>
               </component>
@@ -299,6 +383,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Hier kunt u de volledig bekeken films kijken per profiel"/>
                 </properties>
               </component>
@@ -307,7 +392,8 @@
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
-                  <text value="       Filmnaam"/>
+                  <foreground color="-1"/>
+                  <text value="Filmnaam"/>
                 </properties>
               </component>
             </children>
@@ -317,7 +403,11 @@
             <constraints>
               <tabbedpane title-resource-bundle="config" title-key="untitled2"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <enabled value="false"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="74a3d" class="javax.swing.JTable" binding="task4Table">
@@ -326,13 +416,17 @@
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
               <component id="32e6b" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Geef de film met de langste tijdsduur voor kijkers onder 16 jaar"/>
                 </properties>
               </component>
@@ -341,6 +435,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="                         Filmnaam                                                                             Filmduur (minuten)"/>
                 </properties>
               </component>
@@ -351,7 +446,10 @@
             <constraints>
               <tabbedpane title="Opdracht 5&#10;"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="95da8" class="javax.swing.JTable" binding="task5Table">
@@ -360,13 +458,17 @@
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
               <component id="ec31c" class="javax.swing.JLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Geef de accounts met slechts 1 profiel."/>
                 </properties>
               </component>
@@ -375,6 +477,7 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Profielnaam"/>
                 </properties>
               </component>
@@ -385,7 +488,10 @@
             <constraints>
               <tabbedpane title="Opdracht 6"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-13421773"/>
+              <foreground color="-1"/>
+            </properties>
             <border type="none"/>
             <children>
               <component id="cefac" class="javax.swing.JTable" binding="task6Table">
@@ -394,7 +500,10 @@
                     <preferred-size width="150" height="50"/>
                   </grid>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-16777216"/>
+                  <foreground color="-1"/>
+                </properties>
               </component>
               <component id="e5390" class="javax.swing.JTextField" binding="task6filmName">
                 <constraints>
@@ -403,6 +512,8 @@
                   </grid>
                 </constraints>
                 <properties>
+                  <background color="-13421773"/>
+                  <foreground color="-1"/>
                   <text value="Type hier de gewenste film"/>
                 </properties>
               </component>
@@ -411,6 +522,8 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <background color="-1767148"/>
+                  <foreground color="-1"/>
                   <text value="Zoek"/>
                 </properties>
               </component>
@@ -419,6 +532,7 @@
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Hier kunt u voor een gespecificeerde film zien hoeveel profielen deze film in zijn geheel hebben bekeken"/>
                 </properties>
               </component>
@@ -427,6 +541,7 @@
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties>
+                  <foreground color="-1"/>
                   <text value="Aantal profielen die deze film volledig hebben bekeken"/>
                 </properties>
               </component>
@@ -439,6 +554,8 @@
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-13421773"/>
+          <foreground color="-1"/>
           <text value="Informatica jaar 1, 23IVTC, Stef Bakker, Alan van Tuijl, Marco Weterings"/>
         </properties>
       </component>
@@ -447,6 +564,9 @@
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="1" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <background color="-13421773"/>
+          <enabled value="true"/>
+          <foreground color="-1"/>
           <text value="Netflix Statistix"/>
         </properties>
       </component>
